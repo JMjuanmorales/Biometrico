@@ -45,6 +45,6 @@ class ResetPasswordController extends Controller
 
         $passwordReset->delete();
 
-        return redirect()->route('login')->with('status', '¡Contraseña cambiada con éxito!');
+        return redirect()->route('login')->with('success', '¡Contraseña cambiada con éxito!');
     }
 }

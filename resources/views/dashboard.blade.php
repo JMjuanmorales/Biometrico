@@ -69,11 +69,36 @@
     {{ $attendanceStatuses->links() }}
 
 
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+ @if (session('success'))
+    Swal.fire(
+        '¡Perfecto!',
+        '{{ session('success') }}',
+        'success'
+    )
+@endif
+@if ($errors->any())
+    var errorText = '';
+    @foreach ($errors->all() as $error)
+        errorText += '{{ $error }}<br>';
+    @endforeach
+
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        html: errorText,
+    });
+@endif
+
+@if (session('error'))
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: '{{ session('error') }}',
+    });
+@endif
+</script>
 
 
 </div>

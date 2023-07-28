@@ -14,17 +14,41 @@
                 <img class="icon-image" src="{{url('images/logo-sena2.svg')}}" alt="">
             </div>
                 <label for="email">Correo electrónico</label>
-                <input id="email" class="form-control item" type="email" name="email" required>
+                <input id="email" class="form-control item" type="email" name="email">
                 <button type="submit" class="btn btn-block create-account">Enviar enlace de restablecimiento de contraseña</button>
                 <br>
-                @if(session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                @endif
+                
         </form>
         
     </div>
     
+                <script>
+                    @if (session('success'))
+                        Swal.fire(
+                            '¡Perfecto!',
+                            '{{ session('success') }}',
+                            'success'
+                        )
+                    @endif
+                @if ($errors->any())
+                    var errorText = '';
+                    @foreach ($errors->all() as $error)
+                        errorText += '{{ $error }}<br>';
+                    @endforeach
 
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        html: errorText,
+                    });
+                @endif
+
+                @if (session('error'))
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: '{{ session('error') }}',
+                    });
+                @endif
+                </script>
 @endsection

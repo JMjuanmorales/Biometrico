@@ -36,6 +36,9 @@ class AdminController extends Controller
             'roles' => 'required|array',
             'roles.*' => 'in:student,instructor,admin',
             'group_id' => 'nullable|exists:groups,id',
+        ], [
+            
+            'email.unique' => 'El correo ya está registrado'
         ]);
 
         $user = User::create([

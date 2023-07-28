@@ -23,6 +23,8 @@ class ForgotPasswordController extends Controller
     {
         $request->validate([
             'email' => 'required|email'
+        ], [
+            'email.required' => 'Debe ingresar el correo'
         ]);
 
         $user = User::where('email', $request->email)->first();
@@ -44,6 +46,6 @@ class ForgotPasswordController extends Controller
         // Enviamos el email
         Mail::to($request->email)->send(new ResetPasswordMail($token));
 
-        return back()->with('status', 'Hemos enviado por correo electrónico el enlace de restablecimiento de contraseña!');
+        return back()->with('success', 'Hemos enviado por correo electrónico el enlace de restablecimiento de contraseña!');
     }
 }

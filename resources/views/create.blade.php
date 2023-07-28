@@ -8,13 +8,6 @@
     
     <h1>Crear nuevo usuario</h1>
 
-    
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
-
     <div class="registration-form">
     <form action="{{ route('admin.store-user') }}" method="POST">
         @csrf
@@ -71,6 +64,13 @@
 </div>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+ @if (session('success'))
+    Swal.fire(
+        '¡Perfecto!',
+        '{{ session('success') }}',
+        'success'
+    )
+@endif
 @if ($errors->any())
     var errorText = '';
     @foreach ($errors->all() as $error)

@@ -26,15 +26,29 @@
         </div>
         <button type="submit" class="btn btn-primary">Registrar</button>
 
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
         @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+            var errorText = '';
+            @foreach ($errors->all() as $error)
+                errorText += '{{ $error }}<br>';
+            @endforeach
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                html: errorText,
+            });
         @endif
+
+        @if (session('error'))
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '{{ session('error') }}',
+            });
+        @endif
+        </script>
     </form>
 </div>
 @endsection
