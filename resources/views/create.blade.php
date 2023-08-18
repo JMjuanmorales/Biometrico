@@ -16,8 +16,42 @@
         </div>
 
         <div class="form-group">
-            <label for="name">Nombre</label>
-            <input type="text" class="form-control item" id="name" name="name" value="{{ old('name') }}" required placeholder="Nombre">
+            <label for="name">Nombres</label>
+            <input type="text" class="form-control item" id="name" name="name" value="{{ old('name') }}" required placeholder="Nombres">
+        </div>
+
+        <div class="form-group">
+            <label for="last_name">Apellidos</label>
+            <input type="text" class="form-control item" id="last_name" name="last_name" value="{{ old('last_name') }}" required placeholder="Apellidos">
+        </div>
+
+        <div class="form-group">
+            <label for="document_type">Tipo de documento</label>
+            <select name="document_type" id="document_type">
+                <option value="CC">CC</option>
+                <option value="TI">TI</option>
+                <option value="CE">CE</option>
+              </select>
+        </div>
+
+        <div class="form-group">
+            <label for="document">Numero de documento</label>
+            <input type="text" class="form-control item" id="document" name="document" value="{{ old('document') }}" required placeholder="Numero de documento">
+        </div>
+
+        <div class="form-group">
+            <label for="born_date">Fecha de nacimiento</label>
+            <input type="date" class="form-control item" id="born_date" name="born_date" value="{{ old('born_date') }}" placeholder="Fecha de nacimiento">
+        </div>
+
+        <div class="form-group">
+            <label for="phone_number">Numero celular</label>
+            <input type="text" class="form-control item" id="phone_number" name="phone_number" value="{{ old('phone_number') }}"  placeholder="Numero celular">
+        </div>
+
+        <div class="form-group">
+            <label for="emergency_number">Numero emergencia</label>
+            <input type="text" class="form-control item" id="emergency_number" name="emergency_number" value="{{ old('emergency_number') }}" placeholder="Numero emergencia">
         </div>
 
         <div class="form-group">

@@ -31,18 +31,30 @@ class AdminController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'document_type' => 'required|max:255',
+            'document' => 'required|max:10',
+            'born_date' => 'nullable|max:255',
+            'phone_number'=> 'nullable|max:255',
+            'emergency_number' => 'nullable|max:255', 
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:8|confirmed',
             'roles' => 'required|array',
             'roles.*' => 'in:student,instructor,admin',
             'group_id' => 'nullable|exists:groups,id',
         ], [
-            
-            'email.unique' => 'El correo ya está registrado'
+            'email.unique' => 'El correo ya está registrado',
+            'password.confirmed' => 'Las contraseñas no coinciden'
         ]);
 
         $user = User::create([
             'name' => $validatedData['name'],
+            'last_name' => $validatedData['last_name'],
+            'document_type' => $validatedData['document_type'],
+            'document' => $validatedData['document'],
+            'born_date' => $validatedData['born_date'],
+            'phone_number' => $validatedData['phone_number'],
+            'emergency_number' => $validatedData['emergency_number'],
             'email' => $validatedData['email'],
             'password' => Hash::make($validatedData['password']),
             'group_id' => $validatedData['group_id'],
@@ -69,11 +81,17 @@ class AdminController extends Controller
     }
 
     public function updateUser(Request $request, $id)
-    {
+    {   
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users,email,' . $id,
-            'roles' => 'required|array',
+            'last_name' => 'required|max:255',
+            'document_type' => 'required|max:255',
+            'document' => 'required|max:10',
+            'born_date' => 'nullable|max:255',
+            'phone_number'=> 'nullable|max:255',
+            'emergency_number' => 'nullable|max:255', 
+            'email' => 'nullable|email|max:255|unique:users,email,' . $id,
+            'roles' => 'array',
             'roles.*' => 'in:student,instructor,admin',
             'group_id' => 'nullable|exists:groups,id',
         ]);
@@ -81,6 +99,12 @@ class AdminController extends Controller
         $user = User::findOrFail($id);
         $user->update([
             'name' => $validatedData['name'],
+            'last_name' => $validatedData['last_name'],
+            'document_type' => $validatedData['document_type'],
+            'document' => $validatedData['document'],
+            'born_date' => $validatedData['born_date'],
+            'phone_number' => $validatedData['phone_number'],
+            'emergency_number' => $validatedData['emergency_number'],
             'email' => $validatedData['email'],
             'group_id' => $validatedData['group_id'],
         ]);

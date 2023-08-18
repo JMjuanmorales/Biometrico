@@ -46,7 +46,7 @@
             font-family: 'Lato', sans-serif;
             font-family: 'Oswald', sans-serif;
             font-weight: 800;
-            font-size: 5vw;
+            font-size: 3vw;
             line-height: 1;
             color: black;
             text-align: center;

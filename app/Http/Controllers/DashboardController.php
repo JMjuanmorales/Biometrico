@@ -21,7 +21,7 @@ class DashboardController extends Controller
         
         
 
-        $startDate = '2023-04-17'; 
+        $startDate = '2023-07-27'; 
         $endDate = date('Y-m-d'); 
         $dateRange = $this->createDateRange($startDate, $endDate);
         $dateRange = array_reverse($dateRange);

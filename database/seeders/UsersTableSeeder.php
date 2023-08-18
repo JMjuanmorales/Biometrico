@@ -25,26 +25,15 @@ class UsersTableSeeder extends Seeder
         // Crear usuario administrador
         $adminUser = User::create([
             'name' => 'Admin',
+            'last_name' => 'Perez',
             'email' => 'admin@example.com',
+            'document_type' => 'CC',
+            'document' => "999999999",
             'password' => Hash::make('123456789'),
         ]);
         $adminUser->roles()->attach($adminRole->id);
 
-        // Crear usuario instructor
-        $instructorUser = User::create([
-            'name' => 'Instructor',
-            'email' => 'instructor@example.com',
-            'password' => Hash::make('123456789'),
-        ]);
-        $instructorUser->roles()->attach($instructorRole->id);
-
-        // Crear usuario estudiante
-        $studentUser = User::create([
-            'name' => 'Student',
-            'email' => 'student@example.com',
-            'password' => Hash::make('123456789'),
-        ]);
-        $studentUser->roles()->attach($studentRole->id);
+        
     }
 }
 

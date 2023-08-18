@@ -71,13 +71,13 @@ class UserController extends Controller
     
                 switch ($role) {
                     case 'student':
-                        return redirect()->route('dashboard');
+                        return redirect()->route('dashboard')->with('success', 'Inicio de sesion exitoso');
                     case 'instructor':
-                        return redirect()->route('instructor.groups');
+                        return redirect()->route('instructor.groups')->with('success', 'Inicio de sesion exitoso');
                     case 'admin':
-                        return redirect()->route('admin.create-user');
+                        return redirect()->route('admin.create-user')->with('success', 'Inicio de sesion exitoso');
                     default:
-                        return redirect()->route('home');
+                        return redirect()->route('home')->with('success', 'Inicio de sesion exitoso');
                 }
             }
         }

@@ -31,7 +31,7 @@
                     @foreach($groups as $group)
                         
                         <div class="card">
-                            <a href="{{ route('instructor.group', ['group_id' => $group->id]) }}">
+                            <a href="#">
                                 <div class="card-header">
                                     <img class="product-image" src="{{url('images/logo-sena2.svg')}}" alt="">
                                 </div>

@@ -51,4 +51,14 @@
     </div>
     
 </div>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+ @if (session('success'))
+    Swal.fire(
+        '¡Excelente!',
+        '{{ session('success') }}',
+        'success'
+    )
+@endif
+</script>
 @endsection

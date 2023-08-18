@@ -18,7 +18,7 @@ public function store(Request $request)
         $request->validate([
             'absence_date' => 'required|date',
             'justification' => 'required',
-            'document' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
+            'document' => 'nullable|file|mimes:pdf|max:2048',
         ]);
 
         $documentPath = $request->file('document') ? $request->file('document')->store('excuses') : null;

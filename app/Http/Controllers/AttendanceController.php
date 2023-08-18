@@ -36,7 +36,7 @@ class AttendanceController extends Controller
         $newAttendance->user_id = $user->id;
         $newAttendance->date = $today;
         $newAttendance->check_in_time = now();
-        $newAttendance->status = 'present';
+        $newAttendance->status = 'presente';
         $newAttendance->session_id = $newSessionId;
         $newAttendance->save();
 
