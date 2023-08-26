@@ -26,12 +26,10 @@
     <div class="fichas">
         <div class="container2">
 
-            {{-- route('instructor.group', ['group_id' => $group->id]) --}} 
-
                     @foreach($groups as $group)
                         
                         <div class="card">
-                            <a href="#">
+                            <a href="{{ route('admin.group-admin', ['group_id' => $group->id]) }}">
                                 <div class="card-header">
                                     <img class="product-image" src="{{url('images/logo-sena2.svg')}}" alt="">
                                 </div>

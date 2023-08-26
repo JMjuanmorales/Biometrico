@@ -6,7 +6,7 @@
         {{ __('Regresar') }}
     </a>-->
    
-    <h1>Lista de usuarios</h1>
+    <h1>Lista de usuarios por grupos</h1>
     <table class="table">
         <thead>
             <tr>

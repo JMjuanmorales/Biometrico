@@ -12,6 +12,18 @@
                 <img class="icon-image" src="{{url('images/logo-sena2.svg')}}" alt="">
             </div>
             <div class="form-group">
+                <label for="name"><p>Nombres: {{ $user->name }}</p></label> 
+            </div>
+            <div class="form-group">
+                <label for="last_name"><p>Apellidos: {{ $user->last_name }}</p></label> 
+            </div>
+            <div class="form-group">
+                <label for="document_type"><p>Tipo de documento: {{ $user->document_type }}</p></label> 
+            </div>
+            <div class="form-group">
+                <label for="document"><p>Numero de documento: {{ $user->document }}</p></label> 
+            </div>
+            <div class="form-group">
                 <label for="name"><p>Email: {{ $user->email }}</p></label> 
             </div>
             <div class="form-group">
@@ -20,9 +32,20 @@
             
 
     </form>
+
+    <a class="regresar" href="{{route('profile.edit')}}">Editar perfil</a>
     
 
-    <!-- Aquí puedes agregar más campos según los que tengas en tu tabla de usuarios -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+ @if (session('success'))
+    Swal.fire(
+        '¡Perfecto!',
+        '{{ session('success') }}',
+        'success'
+    )
+@endif
+</script>
 
     
 </div>

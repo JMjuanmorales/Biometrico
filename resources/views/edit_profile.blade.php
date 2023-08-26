@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.roles')
 
 @section('content')
 
@@ -6,11 +6,11 @@
     <!--<a class="regresar" href="" >
         {{ __('Regresar') }}
     </a>-->
-    <h1>Editar usuario</h1>
+    <h1>Editar Perfil</h1>
 
 
     <div class="registration-form">
-        <form class="form-horizontal" method="POST" action="{{ route('admin.update-user', ['id' => $user->id]) }}">
+        <form class="form-horizontal" method="POST" action="{{ route('profile.update', ['id' => $user->id]) }}">
             @csrf
 
             <div class="form-group">
@@ -31,7 +31,7 @@
 
             <div class="form-group">
                 <label for="document_type">document_type</label>
-                <select name="document_type" id="document_type" value="A">
+                <select name="document_type" id="document_type" value="CC">
                     <option value="CC">CC</option>
                     <option value="TI">TI</option>
                     <option value="CE">CE</option>
@@ -58,30 +58,12 @@
                 <input type="text" class="form-control item" id="emergency_number" name="emergency_number" value="{{ old('emergency_number', $user->emergency_number) }}" placeholder="Numero emergencia">
             </div>
 
-            <div class="form-group">
-                <label for="roles">Roles:</label>
-                @foreach($roles as $role)
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="roles[]" id="role_{{ $role->id }}" value="{{ $role->name }}" {{ in_array($role->id, old('roles', $user->roles->pluck('id')->toArray())) ? 'checked' : '' }}>
-                        <label class="form-check-label" for="role_{{ $role->id }}">{{ ucfirst($role->name) }}</label>
-                    </div>
-                @endforeach
-            </div>
+            
+
+           
 
             <div class="form-group">
-                <label for="group_id">Grupo</label>
-                <select class="form-control item" id="group_id" name="group_id">
-                    @foreach ($groups as $group)
-                    <option value="{{ $group->id }}" {{ $group->id === $user->group_id ? 'selected' : '' }}>
-                        {{ $group->program->name }} - Grupo {{ $group->number }}
-                    </option>
-                    @endforeach
-                </select>
-                <small class="form-text text-muted">Selecciona un grupo solo si el usuario es un estudiante.</small>
-            </div>
-
-            <div class="form-group">
-                <button type="submit" class="btn btn-block create-account">Actualizar usuario</button>
+                <button type="submit" class="btn btn-block create-account">Actualizar perfil</button>
             </div>
         </form>
     </div>

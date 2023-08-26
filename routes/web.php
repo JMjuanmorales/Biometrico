@@ -16,6 +16,8 @@ use App\Http\Controllers\ResetPasswordController;
 //Rutas generales para el usuario
 Route::get('/', function () {return redirect()->route('login.form');});
 Route::get('/profile', [UserController::class, 'showProfile'])->name('profile.show');
+Route::get('/profile/edit', [UserController::class, 'editProfile'])->name('profile.edit');
+Route::post('/profile/update/{id}', [UserController::class, 'updateProfile'])->name('profile.update');
 
 Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('register.form');
 Route::post('/register', [UserController::class, 'register'])->name('register');
@@ -74,6 +76,8 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->group(function () {
     Route::get('/admin/create-group', [AdminController::class, 'showCreateGroupForm'])->name('create-group.form');
     Route::post('/admin/create-group', [AdminController::class, 'createGroup'])->name('create-group');
     Route::get('/admin/list-groups', [AdminController::class, 'listGroups'])->name('list-groups');
+    Route::get('/admin/list-groups/{group_id}', [AdminController::class, 'listUsersFichas'])->name('group-admin');
+
 });
 
 

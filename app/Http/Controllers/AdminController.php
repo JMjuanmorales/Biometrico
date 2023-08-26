@@ -171,4 +171,16 @@ class AdminController extends Controller
 
         return view('list-groups', compact('groups'));
     }
+
+    public function listUsersFichas(Request $request, $group_id)
+    {
+        $group = Group::findOrFail($group_id);
+
+        $students = User::where('group_id', $group_id)
+            ->whereHas('roles', function($query) {
+                $query->where('name', 'student');
+            })->get();
+
+        return view('list_user_group', compact('group', 'students'));
+    }
 }

@@ -27,7 +27,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
         .content {
-            min-height: 500px;
+            min-height: 700px;
             padding: 20px;
         }
         

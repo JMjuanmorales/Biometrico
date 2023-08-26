@@ -45,6 +45,13 @@ class UserController extends Controller
         return view('profile', compact('user', 'group'));
     }
 
+    public function editProfile(){
+        $user = Auth::user();
+        $group = $user->group;
+        $roles = $user->role;
+        return view('edit_profile', compact('user'));
+    }
+
     public function showLoginForm()
     {
         return view('login');
@@ -92,4 +99,36 @@ class UserController extends Controller
         Auth::logout();
         return redirect()->route('login.form');
     }
+
+    public function updateProfile(Request $request, $id)
+    {   
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'document_type' => 'required|max:255',
+            'document' => 'required|max:10',
+            'born_date' => 'nullable|max:255',
+            'phone_number'=> 'nullable|max:255',
+            'emergency_number' => 'nullable|max:255', 
+            'email' => 'nullable|email|max:255|unique:users,email,' . $id,
+            'roles' => 'array',
+            'roles.*' => 'in:student,instructor,admin',
+        ]);
+
+        $user = User::findOrFail($id);
+        $user->update([
+            'name' => $validatedData['name'],
+            'last_name' => $validatedData['last_name'],
+            'document_type' => $validatedData['document_type'],
+            'document' => $validatedData['document'],
+            'born_date' => $validatedData['born_date'],
+            'phone_number' => $validatedData['phone_number'],
+            'emergency_number' => $validatedData['emergency_number'],
+            'email' => $validatedData['email'],
+            
+        ]);
+
+        return redirect()->route('profile.show')->with('success', 'Perfil actualizado correctamente');
+    }
+
 }
