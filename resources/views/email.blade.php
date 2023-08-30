@@ -2,9 +2,8 @@
 
 @section('content')
 
-<!--<a class="regresar" href="" >
-    {{ __('Regresar') }}
-</a>-->
+<button class="regresar" onclick="return window.history.back();">Retroceder</button>
+
 
         
     <div class="registration-form">

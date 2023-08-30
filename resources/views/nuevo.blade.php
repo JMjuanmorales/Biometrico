@@ -1,8 +1,9 @@
 
     <div class="registration-form">
-        <!--<a class="regresar" href="" >
-            {{ __('Regresar') }}
-        </a>-->
+        
+        <button class="regresar" onclick="return window.history.back();">Retroceder</button>
+
+
         <form>
             <div class="form-icon">
                 <span><i class="icon icon-user"></i></span>

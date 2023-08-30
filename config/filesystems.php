@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DISK', 'local'),
+    'default' => env('FILESYSTEM_DISK', 'firebase'),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,6 +54,16 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
+            
+        ],
+        'firebase' => [
+            'driver' => 'google',
+            'project_id' => env('FIREBASE_PROJECT_ID', 'biometric-service-35fc8'),
+            'key_file' => base_path('storage_credentials.json'),
+            'bucket' => env('FIREBASE_STORAGE_BUCKET'),
+            'path_prefix' => env('FIREBASE_STORAGE_PATH_PREFIX', null),
+            'storage_api_uri' => env('FIREBASE_STORAGE_API_URI', null),
+            'visibility' => 'public',
         ],
 
     ],

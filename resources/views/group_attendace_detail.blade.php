@@ -2,9 +2,10 @@
 
 @section('content')
 <div class="container">
-    <!--<a class="regresar" href="" >
-        {{ __('Regresar') }}
-    </a>-->
+
+    <button class="regresar" onclick="return window.history.back();">Retroceder</button>
+
+
     <h1>Asistencias del grupo {{ $group->name }} en la fecha {{ $date }}</h1>
     <table class="table">
         <thead>

@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="container">
-    <!--<a class="regresar" href="" >
-        {{ __('Regresar') }}
-    </a>-->
+    
+    
     
     <h1>Crear nuevo usuario</h1>
 

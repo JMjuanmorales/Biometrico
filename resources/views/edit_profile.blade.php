@@ -3,9 +3,10 @@
 @section('content')
 
 <div class="container">
-    <!--<a class="regresar" href="" >
-        {{ __('Regresar') }}
-    </a>-->
+    
+    <button class="regresar" onclick="return window.history.back();">Retroceder</button>
+
+
     <h1>Editar Perfil</h1>
 
 

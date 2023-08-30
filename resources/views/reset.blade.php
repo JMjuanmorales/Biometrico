@@ -2,9 +2,10 @@
 
 @section('content')
     <div class="registration-form">
-        <!--<a class="regresar" href="" >
-            {{ __('Regresar') }}
-        </a>-->
+        
+        <button class="regresar" onclick="return window.history.back();">Retroceder</button>
+
+
         <form method="POST" action="{{ route('password.update') }}">
             @csrf
             <input type="hidden" name="token" value="{{ $token }}">

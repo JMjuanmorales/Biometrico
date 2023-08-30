@@ -1,9 +1,9 @@
 @extends('layouts.roles')
 
 @section('content')
-    <!--<a class="regresar" href="" >
-        {{ __('Regresar') }}
-    </a>-->
+    
+
+<button class="regresar" onclick="return window.history.back();">Retroceder</button>
 
 <h1>Perfil de {{ $user->name }}</h1>
 <div class="registration-form">

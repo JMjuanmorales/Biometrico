@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container">
-    <!--<a class="regresar" href="" >
-        {{ __('Regresar') }}
-    </a>-->
+    
+    <button class="regresar" onclick="return window.history.back();">Retroceder</button>
+
     
     <h1>Lista de excusas</h1>
     
@@ -26,8 +26,10 @@
                     <td>{{ $excuse->absence_date }}</td>
                     <td>{{ $excuse->justification }}</td>
                     <td>
-                        @if ($excuse->document)
-                            <a href="{{ route('excuse.download-document', ['id' => $excuse->id]) }}" class="btn btn-sm btn-primary">Descargar</a>
+                        @if ($excuse->document_path)
+                            <a href="{{ asset('https://storage.googleapis.com/biometric-service-35fc8.appspot.com/files/excuses/'. $excuse->document_path) }}" download="{{ $excuse->name }} - {{ $excuse->document_path }}">
+                                <img src="{{ url('images/pdf.png') }}" alt="hola">
+                            </a>
                         @else
                             No hay documento adjunto
                         @endif

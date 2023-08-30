@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container">
-    <!--<a class="regresar" href="" >
-        {{ __('Regresar') }}
-    </a>-->
-    <h1>Registro</h1>
+
+    <button class="regresar" onclick="return window.history.back();">Retroceder</button>
+
+
     <form action="{{ route('register') }}" method="post">
         @csrf
         <div class="form-group">
