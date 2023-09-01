@@ -29,11 +29,20 @@
             <div class="form-group">
                 <label for="name"><p>Fecha de registro: {{ $user->created_at->format('d-m-Y') }}</p></label>  
             </div>
+            <div class="form-group">
+                {{QrCode::size(150)->generate($user->email)}}
+            </div>
+            <br>
             
+            <div class="form-group">
+                <a class="regresar" href="{{route('profile.edit')}}">Editar perfil</a> 
+            </div>
+
+        
 
     </form>
 
-    <a class="regresar" href="{{route('profile.edit')}}">Editar perfil</a>
+    
     
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -309,139 +309,63 @@ transition-delay: 2.2s;
 
     /*-----------------------Regresar--------------------*/
 
-    .regresar {
-            
+    /*-----------------------boton Regresar-------------------*/
+    .regresar{
             background-color: #04808e;
-            border: solid transparent;
-            border-radius: 16px;
-            border-width: 0 0 4px;
-            box-sizing: border-box;
-            color: black;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 15px;
-            font-weight: 700;
-            text-decoration: none;
-            letter-spacing: .8px;
-            line-height: 20px;
-            margin: 0;
-            outline: none;
-            overflow: visible;
-            padding: 13px 19px;
+            border-radius: 12px;
+            color: white;
+            padding: 13px 26px;
             text-align: center;
-            text-transform: uppercase;
-            touch-action: manipulation;
-            transform: translateZ(0);
-            transition: filter .2s;
-            user-select: none;
-            -webkit-user-select: none;
-            vertical-align: middle;
-            white-space: nowrap;
-            }
+            text-decoration: none;
+            display: inline-block;
+            font-size: 17px;
+            margin: 2px 1px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
 
-        .regresar:after {
-            background-clip: padding-box;
-            background-color: #03a5fd;
-            border: solid transparent;
-            border-radius: 16px;
-            border-width: 0 0 4px;
-            bottom: -4px;
-            content: "";
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-            z-index: -1;
-            }
+        }
 
-        .regresar:focus {
-            user-select: auto;
-            }
+        .regresar{
+            background-color: white; 
+            color: black; 
+            border: 2px solid #04808e;
+        }
 
-        .regresar:hover:not(:disabled) {
-            filter: brightness(1.1);
-            }
 
-        .regresar:disabled {
-            cursor: auto;
-            }
-
-        .regresar:active:after {
-            border-width: 0 0 0px;
-            }
-
-        .regresar:active {
-            padding-bottom: 10px;
-            
-            }
+        .regresar:hover {
+            background-color: #04808e; 
+            color: white;
+        }
 
         /*-----------------------Calendario--------------------*/
-
-        .calendario {
-            
+        .calendario{
             background-color: #04808e;
-            border: solid transparent;
-            border-radius: 16px;
-            border-width: 0 0 4px;
-            box-sizing: border-box;
-            color: black;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 15px;
-            font-weight: 700;
-            text-decoration: none;
-            letter-spacing: .8px;
-            line-height: 20px;
-            margin: 0;
-            outline: none;
-            overflow: visible;
-            padding: 13px 19px;
+            border-radius: 12px;
+            color: white;
+            padding: 13px 26px;
             text-align: center;
-            text-transform: uppercase;
-            touch-action: manipulation;
-            transform: translateZ(0);
-            transition: filter .2s;
-            user-select: none;
-            -webkit-user-select: none;
-            vertical-align: middle;
-            white-space: nowrap;
-            
-            }
+            text-decoration: none;
+            display: inline-block;
+            font-size: 17px;
+            margin: 2px 1px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
 
-        .calendario:after {
-            background-clip: padding-box;
-            background-color: #03a5fd;
-            border: solid transparent;
-            border-radius: 16px;
-            border-width: 0 0 4px;
-            bottom: -4px;
-            content: "";
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-            z-index: -1;
-            }
+        }
 
-        .calendario:focus {
-            user-select: auto;
-            }
+        .calendario{
+            background-color: white; 
+            color: black; 
+            border: 2px solid #04808e;
+        }
 
-        .calendario:hover:not(:disabled) {
-            filter: brightness(1.1);
-            }
 
-        .calendario:disabled {
-            cursor: auto;
-            }
-
-        .calendario:active:after {
-            border-width: 0 0 0px;
-            }
-
-        .calendario:active {
-            padding-bottom: 10px;
-            }
+        .calendario:hover {
+            background-color: #04808e; 
+            color: white;
+        }
         
 
         
