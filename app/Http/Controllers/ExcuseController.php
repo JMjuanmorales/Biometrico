@@ -38,6 +38,8 @@ public function store(Request $request)
                 $bucket->upload(file_get_contents($file), [
                     'name' => 'files/excuses/' . $filename,
                 ]);
+
+                
     
                 $excuse->document_path = $filename;
             };

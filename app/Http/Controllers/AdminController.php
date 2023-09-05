@@ -59,6 +59,7 @@ class AdminController extends Controller
             'password' => Hash::make($validatedData['password']),
             'group_id' => $validatedData['group_id'],
         ]);
+    
 
         $roles = Role::whereIn('name', $validatedData['roles'])->get();
         $user->roles()->attach($roles);
@@ -66,6 +67,10 @@ class AdminController extends Controller
 
         return redirect()->route('admin.create-user')->with('success', 'Usuario creado correctamente');
     }
+
+    
+
+    
     public function listUsers()
     {
         $users = User::all();
@@ -114,6 +119,67 @@ class AdminController extends Controller
 
         return redirect()->route('admin.users')->with('success', 'Usuario actualizado correctamente');
     }
+
+    public function manyUsers(Request $request) {
+        
+        if ($request->hasFile('user_file')) {
+            $userFile = $request->file('user_file');
+            $fileContents = file_get_contents($userFile->getRealPath());
+            $usersData = explode("\n", $fileContents);
+    
+            $createdUsers = [];
+            $existingUsers = [];
+    
+            // Obtener el rol que deseas asignar a todos los usuarios
+            $roleName = $request->input("roles"); // Reemplaza 'nombre_del_rol' con el nombre real del rol
+    
+            foreach ($usersData as $userLine) {
+                $userDataArray = explode(',', $userLine);
+    
+                if (count($userDataArray) >= 5) {
+                    $existingUser = User::where('document', $userDataArray[3])
+                        ->orWhere('email', $userDataArray[4])
+                        ->first();
+    
+                    if ($existingUser) {
+                        $existingUsers[] = $existingUser;
+                        continue;
+                    }
+    
+                     $newUser = new User();
+                     $newUser->name = $userDataArray[0];
+                     $newUser->last_name = $userDataArray[1];
+                     $newUser->document_type = $userDataArray[2];
+                     $newUser->document = $userDataArray[3];
+                     $newUser->email = $userDataArray[4];
+                     $newUser->password = Hash::make($userDataArray[3]);
+                  
+    
+                    $newUser->save();
+                    $roles = Role::whereIn('name', $roleName)->get();
+                    $newUser->roles()->attach($roles);
+                    $createdUsers[] = $newUser;
+    
+                    // Asignar el rol al usuario recién creado
+                }
+            }
+    
+            if (count($existingUsers) === count($usersData)) {
+                return redirect()->route('admin.users')->with('error', 'Todos los usuarios ya estan registrados');
+            }
+
+    
+            return redirect()->route('admin.users')->with('success', 'Usuarios registrados correctamente');
+        }
+    }
+
+    public function createUsers()
+    {
+        Log::info('AdminController - createUser');
+        $roles = Role::all();
+        return view('create_many_users', compact('roles'));
+    }
+    
 
     public function showCreateProgramForm()
     {

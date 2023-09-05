@@ -92,7 +92,17 @@
         <div class="form-group">
             <button type="submit" class="btn btn-block create-account">Crear usuario</button>
         </div>
+
     </form>
+
+    
+
+    <li><a href="{{ route('admin.create-users') }}">Crear usuario</a></li>
+
+    
+
+
+
 
 </div>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

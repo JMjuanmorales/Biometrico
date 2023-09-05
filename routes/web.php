@@ -68,6 +68,8 @@ Route::middleware(['auth', 'role:instructor'])->group(function () {
 Route::middleware(['auth', 'role:admin'])->name('admin.')->group(function () {
     Route::get('/create-user', [AdminController::class, 'createUser'])->name('create-user');
     Route::post('/store-user', [AdminController::class, 'storeUser'])->name('store-user');
+    Route::get('/create-users', [AdminController::class, 'createUsers'])->name('create-users');
+    Route::post('/store-users', [AdminController::class, 'manyUsers'])->name('store-users');
     Route::get('/admin/users', [AdminController::class, 'listUsers'])->name('users');
     Route::get('/edit-user/{id}', [AdminController::class, 'editUser'])->name('edit-user');
     Route::post('/update-user/{id}', [AdminController::class, 'updateUser'])->name('update-user');
