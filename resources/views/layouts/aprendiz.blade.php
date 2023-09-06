@@ -21,7 +21,7 @@
 
         /*-------------------------------------Header------------------------------------ */
         .header {
-                background:linear-gradient(to left,  #36dda3, #4582b4); 
+                background-color: #fc7323; 
                 color: white;
                 padding: 20px;
                 font-size: 2.5rem;
@@ -311,7 +311,7 @@ transition-delay: 2.2s;
 
     /*-----------------------boton Regresar-------------------*/
     .regresar{
-            background-color: #04808e;
+            background-color: #fc7323;
             border-radius: 12px;
             color: white;
             padding: 13px 26px;
@@ -329,18 +329,18 @@ transition-delay: 2.2s;
         .regresar{
             background-color: white; 
             color: black; 
-            border: 2px solid #04808e;
+            border: 2px solid #fc7323;
         }
 
 
         .regresar:hover {
-            background-color: #04808e; 
+            background-color: #fc7323; 
             color: white;
         }
 
         /*-----------------------Calendario--------------------*/
         .calendario{
-            background-color: #04808e;
+            background-color: #fc7323;
             border-radius: 12px;
             color: white;
             padding: 13px 26px;
@@ -358,12 +358,12 @@ transition-delay: 2.2s;
         .calendario{
             background-color: white; 
             color: black; 
-            border: 2px solid #04808e;
+            border: 2px solid #fc7323;
         }
 
 
         .calendario:hover {
-            background-color: #04808e; 
+            background-color: #fc7323; 
             color: white;
         }
         
@@ -374,7 +374,7 @@ transition-delay: 2.2s;
     /*-------------------------------------------------caja contenedor---------------------------------------------------- */
 
     body{
-        background-color: #dee9ff;
+        background-color: #f6eee0;
     }
 
     .registration-form{
@@ -393,7 +393,7 @@ transition-delay: 2.2s;
 
     .registration-form .form-icon{
         text-align: center;
-        background-color: #39a900;
+        background-color: #fc7323;
         border-radius: 50%;
         font-size: 40px;
         color: white;
@@ -415,7 +415,7 @@ transition-delay: 2.2s;
         padding: 10px 20px;
         font-size: 18px;
         font-weight: bold;
-        background-color: #5791ff;
+        background-color: #fc7323;
         border: none;
         color: white;
         margin-top: 20px;
@@ -443,7 +443,7 @@ transition-delay: 2.2s;
     .registration-form .social-icons a{
         font-size: 23px;
         margin: 0 3px;
-        color: #5691ff;
+        color: #fc7323;
         border: 1px solid;
         border-radius: 50%;
         width: 45px;
@@ -724,7 +724,7 @@ transition-delay: 2.2s;
 
 
         .buscar {
-            background-color: #118153;
+            background-color: #fc7323;
             border: solid transparent;
             border-radius: 10px;
             border-width: 0 0 2px;
@@ -754,7 +754,7 @@ transition-delay: 2.2s;
 
         .buscar:after {
             background-clip: padding-box;
-            background-color: #03FD21;
+            background-color: #fc7323;
             border: solid transparent;
             border-radius: 16px;
             border-width: 0 0 4px;
@@ -897,7 +897,7 @@ transition-delay: 2.2s;
             border-right: 1px solid;
             border-left: 1px solid;
             border-collapse: collapse;
-            background-color: #4582b4;
+            background-color: #fc7323;
         }
 
         thead th {
@@ -924,7 +924,7 @@ transition-delay: 2.2s;
             border-style: solid;
             border-width: 2px;
             border-color: #fff;
-            background-color: #4582b4;
+            background-color: #fc7323;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 15px;
             color: #fff;
@@ -938,7 +938,7 @@ transition-delay: 2.2s;
                 border-style: solid;
                 border-width: 2px;
                 border-color:#fff;
-                background-color: #4582b4;
+                background-color: #fc7323;
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 15px;
                 color: #fff;

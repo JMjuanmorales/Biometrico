@@ -12,7 +12,7 @@
 
     /*-------------------------------------Header------------------------------------ */
         .header {
-                background:linear-gradient(to left,  #36dda3, #4582b4); 
+                background-color: rgb(0, 0, 0); 
                 color: white;
                 padding: 20px;
                 font-size: 2.5rem;
@@ -53,312 +53,107 @@
             
         }
 
-        
 
+        /*-----------------------boton ingresar rol--------------------*/
 
-
-        .logo {
-            position: absolute;
-            top: 60px;
-            left: 50px;
-            display: block;
-            z-index: 11;
-            transition: all 250ms linear;
-        }
-        .logo img {
-            height: 26px;
-            width: auto;
-            display: block;
-        }
-
-        @media screen and (max-width: 480px) {
-            
-            .menu-icon:checked ~ .nav {
-                width: 100%;
-            }
-
-            .nav ul li a{
-                font-size: 2vh;
-            }
-        }
-
-        /*-----------------------logaut--------------------*/
-
-        .regresar {
-            
-            background-color: #04808e;
-            border: solid transparent;
-            border-radius: 16px;
-            border-width: 0 0 4px;
-            box-sizing: border-box;
-            color: black;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 15px;
-            font-weight: 700;
-            text-decoration: none;
-            letter-spacing: .8px;
-            line-height: 20px;
-            margin: 0;
-            outline: none;
-            overflow: visible;
-            padding: 13px 19px;
+        .rol{
+            background-color: black;
+            border-radius: 12px;
+            color: white;
+            padding: 13px 26px;
             text-align: center;
-            text-transform: uppercase;
-            touch-action: manipulation;
-            transform: translateZ(0);
-            transition: filter .2s;
-            user-select: none;
-            -webkit-user-select: none;
-            vertical-align: middle;
-            white-space: nowrap;
-            }
+            text-decoration: none;
+            display: inline-block;
+            font-size: 17px;
+            margin: 2px 1px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
 
-        .regresar:after {
-            background-clip: padding-box;
-            background-color: #03a5fd;
-            border: solid transparent;
-            border-radius: 16px;
-            border-width: 0 0 4px;
-            bottom: -4px;
-            content: "";
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-            z-index: -1;
-            }
-
-        .regresar:focus {
-            user-select: auto;
-            }
-
-        .regresar:hover:not(:disabled) {
-            filter: brightness(1.1);
-            }
-
-        .regresar:disabled {
-            cursor: auto;
-            }
-
-        .regresar:active:after {
-            border-width: 0 0 0px;
-            }
-
-        .regresar:active {
-            padding-bottom: 10px;
-            }
-
-        @media (max-width: 576px) {
-            .registration-form form{
-                padding: 50px 20px;
-            }
-
-            .registration-form .form-icon{
-                width: 70px;
-                height: 70px;
-                font-size: 30px;
-                line-height: 70px;
-            }
-
-            .icon-image {
-                width: 90px;
-                height: 90px;
-            }
         }
 
+        .rol{
+            background-color: white; 
+            color: black; 
+            border: 2px solid black;
+        }
+
+
+        .rol:hover {
+            background-color: black; 
+            color: white;
+        }
+
+        /*-----------------------boton ingresar rol--------------------*/
+
+        .logout{
+            background-color: black;
+            border-radius: 12px;
+            color: white;
+            padding: 13px 26px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 17px;
+            margin: 2px 1px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+
+        }
+
+        .logout{
+            background-color: white; 
+            color: black; 
+            border: 2px solid black;
+        }
+
+
+        .logout:hover {
+            background-color: black; 
+            color: white;
+        }
         
 
 
 
     /*-------------------------------------------------caja contenedor---------------------------------------------------- */
 
-    body{
-        background-color: #dee9ff ;
-        background-size: cover;
-        background-repeat: no-repeat;
-        
-    }
-
-    .registration-form{
-        padding: 50px 0;
-        
-    }
-
-    .registration-form form{
-        background-color: #fff;
-        max-width: 900px;
-        margin: auto;
-        padding: 50px 70px;
-        border-top-left-radius: 30px;
-        border-top-right-radius: 30px;
-        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
-    }
-
-    .registration-form .form-icon{
-        text-align: center;
-        background-color: #39a900;
-        border-radius: 50%;
-        font-size: 40px;
-        color: white;
-        width: 100px;
-        height: 100px;
-        margin: auto;
-        margin-bottom: 50px;
-        line-height: 100px;
-    }
-
-    .registration-form .item{
-        border-radius: 20px;
-        margin-bottom: 25px;
-        padding: 10px 20px;
-    }
-
-    .registration-form .create-account{
-        border-radius: 30px;
-        padding: 10px 20px;
-        font-size: 18px;
-        font-weight: bold;
-        background-color: #5791ff;
-        border: none;
-        color: white;
-        margin-top: 20px;
-    }
-
-    .registration-form .social-media{
-        max-width: 600px;
-        background-color: #fff;
-        margin: auto;
-        padding: 35px 0;
-        text-align: center;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
-        color: #9fadca;
-        border-top: 1px solid #dee9ff;
-        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
-    }
-
-    .registration-form .social-icons{
-        margin-top: 30px;
-        margin-bottom: 16px;
-    }
-
-    .registration-form .social-icons a{
-        font-size: 23px;
-        margin: 0 3px;
-        color: #5691ff;
-        border: 1px solid;
-        border-radius: 50%;
-        width: 45px;
-        display: inline-block;
-        height: 45px;
-        text-align: center;
-        background-color: #fff;
-        line-height: 45px;
-    }
-
-    .registration-form .social-icons a:hover{
-        text-decoration: none;
-        opacity: 0.6;
-    }
-
-    @media (max-width: 576px) {
-        .registration-form form{
-            padding: 50px 20px;
+        body{
+            background-color: #ffffff ;
+            background-size: cover;
+            background-repeat: no-repeat;
+            
         }
-
-        .registration-form .form-icon{
-            width: 70px;
-            height: 70px;
-            font-size: 30px;
-            line-height: 70px;
-        }
-
-        .icon-image {
-            width: 90px;
-            height: 90px;
-        }
-
-        .header {
-                background:linear-gradient(to left,  #36dda3, #4582b4); 
-                color: white;
-                padding: 20px;
-                font-size: 20px;
-                height: 130px;
-                font-weight: bold;
-                line-height: 90px;
-            }
-
-        .nav ul li a{
-            font-size: 3vh;
-        }
-    }
-
-    /* ----------------Checkbox-------------- */
-
-    .form-check-input {
-        border: 1px solid blue;
-        border-radius: 3px;
-        width: 16px;
-        height: 16px;
-        display: inline-block;
-        position: relative;
-
-        &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            width: 12px;
-            height: 12px;
-            background-color: blue;
-            border-radius: 3px;
-            transition: 0.3s;
-        }
-    }
-
    
     
         
     /* --------------fiachas ------------ */
 
-        .p-5{
-            padding: 20px;
-            
-            padding: 3rem!important;
-             }
-
-        a:link, a:visited, a:active {
-            text-decoration:none;
-        }
-        .container2 {
+        
+    .container2 {
             display: flex;
             width: 100%;
             justify-content: space-evenly;
             flex-wrap: wrap;
             margin-top: 50px;
+            
         }
-        .card {
+        .admin {
             background-color:#167AA5 ;
             margin: 10px;
             border-radius: 10px;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             width: 350px;
+            color: #ffffff;
         }
 
-        .card-header {
+        .admin-header {
             color: white;
         }
-        .card-header img {
-            background-color: #167AA5 ;
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .card-body {
+        
+        .admin-body {
             background-color:#fff;
             display: flex;
             flex-direction: column;
@@ -371,32 +166,17 @@
         
         
         
-        .card-body p {
+        .admin-body p {
             font-size: 13px;
             margin: 0 0 40px;
             color:black;
         }
-        .user {
-            background-color:#fff;
-            display: flex;
-            margin-top: auto;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 20px;
-            color:black;
-
-        
-
-        }
-
-    /*---------------------------------------------------- */
        
     /*---------------------------------------------------- */
     /*footer*/
 
 
-    .footer-distributed {
+            .footer-distributed {
                 background-color: black;
                 box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
                 box-sizing: border-box;
@@ -465,6 +245,8 @@
                 margin-left: 3px;
                 transition:all .25s;
                 }
+
+            
 
         
         

@@ -4,6 +4,9 @@
 
 <div class="container">
     
+    <button class="regresar" onclick="return window.history.back();">Retroceder</button>
+    <br>
+    <br>
     
     <div class="p-5">
 

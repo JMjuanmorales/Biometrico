@@ -27,9 +27,7 @@
                     <td>{{ $excuse->justification }}</td>
                     <td>
                         @if ($excuse->document_path)
-                            <a href="{{ asset('https://firebasestorage.googleapis.com/v0/b/biometric-service-35fc8.appspot.com/o/files%2Fexcuses%2FExcusayGYKn.pdf?alt=media&token=33bf11bd-53b4-45b4-b83e-1d4cd3c9603d'. $excuse->document_path) }}" download="{{ $excuse->name }} - {{ $excuse->document_path }}">
-                                <img src="{{ url('images/pdf.png') }}" alt="hola">
-                            </a>
+                        <a href="{{ route('descargar', ['filename' => $excuse->document_path]) }}"><img src="{{ url('images/pdf.png') }}" alt="hola"></a>
                         @else
                             No hay documento adjunto
                         @endif

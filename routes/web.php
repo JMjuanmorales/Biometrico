@@ -59,6 +59,8 @@ Route::middleware(['auth', 'role:instructor'])->group(function () {
     Route::post('/instructor/create-program', [InstructorController::class, 'createProgram'])->name('instructor.create-program');
     Route::get('/instructor/create-group', [InstructorController::class, 'showCreateGroupForm'])->name('instructor.create-group.form');
     Route::post('/instructor/create-group', [InstructorController::class, 'createGroup'])->name('instructor.create-group');
+    Route::get('/instructor/descargar-pdf/{filename}', [ExcuseController::class, 'download'])->name('descargar');
+
 
 });
 

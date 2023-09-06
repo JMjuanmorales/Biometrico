@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     
-    
+    <button class="regresar" onclick="return window.history.back();">Retroceder</button>
     
     <h1>Crear nuevo usuario</h1>
 

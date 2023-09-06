@@ -6,6 +6,10 @@ use App\Models\Excuse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Kreait\Firebase\Exception\FirebaseException;
+use Kreait\Firebase\Factory;
+use Google\Cloud\Core\ExponentialBackoff;
+use Kreait\Firebase\ServiceAccount;
 
 class ExcuseController extends Controller
 {
@@ -49,5 +53,26 @@ public function store(Request $request)
 
 
         return redirect()->route('dashboard')->with('success', 'Excusa enviada correctamente.');
+    }
+
+    public function download($filename){
+        // Ruta al archivo en Firebase Storage
+        $rutaArchivo = 'files/excuses/' . $filename;
+
+        // Crea una instancia de Firebase
+        $factory = new Factory();
+        $firebase = $factory->withServiceAccount(config('firebase.credentials'))
+                            ->withDatabaseUri(config('firebase.database_url'))
+                            ->create();
+
+        // Obtiene una referencia al archivo en Firebase Storage
+        $storage = $firebase->getStorage();
+        $archivoRef = $storage->getObject($rutaArchivo);
+
+        // Genera una URL de descarga firmada para el archivo (válida por 15 minutos)
+        $url = $archivoRef->signedUrl(now()->addMinutes(15));
+
+        // Redirige al usuario a la URL de descarga
+        return redirect($url);
     }
 }

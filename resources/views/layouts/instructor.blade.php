@@ -14,8 +14,7 @@
     <!-- Estilos personalizados -->
     <style>
         *{
-            font-family: 'Lato', sans-serif;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Work Sans';
         }
         body {
             background-color: #f0f2f5;
@@ -23,7 +22,7 @@
 
         /*-------------------------------------Header------------------------------------ */
         .header {
-                background:linear-gradient(to left,  #36dda3, #4582b4); 
+                background-color:rgb(89, 181, 71); 
                 color: white;
                 padding: 20px;
                 font-size: 2.5rem;
@@ -54,8 +53,6 @@
 }
 
 h1{
-    font-family: 'Lato', sans-serif;
-    font-family: 'Oswald', sans-serif;
     font-weight: 800;
     font-size: 3vw;
     line-height: 1;
@@ -313,7 +310,7 @@ transition-delay: 1.5s;
     /*-------------------------------------------------caja contenedor---------------------------------------------------- */
 
     body{
-        background-color: #dee9ff;
+        background-color: #eaf8eb;
     }
 
     .registration-form{
@@ -448,7 +445,7 @@ transition-delay: 1.5s;
         /* --------------fichas ------------ */
 
         .p-5{
-            background: linear-gradient(to left,  #36dda3, #4582b4);
+            background:rgb(89, 181, 71);
             padding: 3rem!important;
              }
 
@@ -510,7 +507,7 @@ transition-delay: 1.5s;
   
         /*-----------------------boton Regresar-------------------*/
         .regresar{
-            background-color: #04808e;
+            background-color: rgb(89, 181, 71);
             border-radius: 12px;
             color: white;
             padding: 13px 26px;
@@ -528,12 +525,12 @@ transition-delay: 1.5s;
         .regresar{
             background-color: white; 
             color: black; 
-            border: 2px solid #04808e;
+            border: 2px solid rgb(89, 181, 71);
         }
 
 
         .regresar:hover {
-            background-color: #04808e; 
+            background-color: rgb(89, 181, 71); 
             color: white;
         }
 
@@ -798,7 +795,7 @@ transition-delay: 1.5s;
             border-right: 1px solid;
             border-left: 1px solid;
             border-collapse: collapse;
-            background-color: #4582b4;
+            background-color: rgb(89, 181, 71);
         }
 
         thead th {

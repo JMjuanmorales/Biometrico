@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'ab5ff40cdd5d11abc2f45e29ea027587a37b4083',
+        'reference' => '60fd7ba11cea2006a4ec9c0b00f132e6b7dbfb05',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -442,6 +442,15 @@
                 0 => '*',
             ),
         ),
+        'kreait/firebase-bundle' => array(
+            'pretty_version' => '5.0.0',
+            'version' => '5.0.0.0',
+            'reference' => '90d2a2e1ed2d1aa13127c61ad31ca070c4a9377e',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../kreait/firebase-bundle',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'kreait/firebase-php' => array(
             'pretty_version' => '7.5.2',
             'version' => '7.5.2.0',
@@ -481,7 +490,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'ab5ff40cdd5d11abc2f45e29ea027587a37b4083',
+            'reference' => '60fd7ba11cea2006a4ec9c0b00f132e6b7dbfb05',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1172,6 +1181,15 @@
                 0 => '1.1|2.0|3.0',
             ),
         ),
+        'symfony/config' => array(
+            'pretty_version' => 'v6.3.2',
+            'version' => '6.3.2.0',
+            'reference' => 'b47ca238b03e7b0d7880ffd1cf06e8d637ca1467',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/config',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'symfony/console' => array(
             'pretty_version' => 'v6.2.8',
             'version' => '6.2.8.0',
@@ -1187,6 +1205,15 @@
             'reference' => 'aedf3cb0f5b929ec255d96bbb4909e9932c769e0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/css-selector',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/dependency-injection' => array(
+            'pretty_version' => 'v6.3.4',
+            'version' => '6.3.4.0',
+            'reference' => '68a5a9570806a087982f383f6109c5e925892a49',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/dependency-injection',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -1231,6 +1258,15 @@
             'provided' => array(
                 0 => '2.0|3.0',
             ),
+        ),
+        'symfony/filesystem' => array(
+            'pretty_version' => 'v6.3.1',
+            'version' => '6.3.1.0',
+            'reference' => 'edd36776956f2a6fcf577edb5b05eb0e3bdc52ae',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/filesystem',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'symfony/finder' => array(
             'pretty_version' => 'v6.2.7',
@@ -1375,6 +1411,12 @@
             'install_path' => __DIR__ . '/../symfony/service-contracts',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'symfony/service-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.1|2.0|3.0',
+            ),
         ),
         'symfony/string' => array(
             'pretty_version' => 'v6.2.8',

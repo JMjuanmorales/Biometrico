@@ -15,7 +15,7 @@
 
     /*-------------------------------------Header------------------------------------ */
         .header {
-                background:linear-gradient(to left,  #36dda3, #4582b4); 
+                background-color:#238276; 
                 color: white;
                 padding: 20px;
                 font-size: 2.5rem;
@@ -301,7 +301,7 @@
 
         /*-----------------------boton Regresar-------------------*/
         .regresar{
-            background-color: #04808e;
+            background-color: #238276;
             border-radius: 12px;
             color: white;
             padding: 13px 26px;
@@ -319,12 +319,12 @@
         .regresar{
             background-color: white; 
             color: black; 
-            border: 2px solid #04808e;
+            border: 2px solid #238276;
         }
 
 
         .regresar:hover {
-            background-color: #04808e; 
+            background-color: #238276; 
             color: white;
         }
         
@@ -336,7 +336,7 @@
     /*-------------------------------------------------caja contenedor---------------------------------------------------- */
 
     body{
-        background-color:#dee9ff;
+        background-color:#edf5f4;
         background-size: cover;
         background-repeat: no-repeat;
         
@@ -359,7 +359,7 @@
 
     .registration-form .form-icon{
         text-align: center;
-        background-color: #39a900;
+        background-color: #238276;
         border-radius: 50%;
         font-size: 40px;
         color: white;
@@ -381,7 +381,7 @@
         padding: 10px 20px;
         font-size: 18px;
         font-weight: bold;
-        background-color: #5791ff;
+        background-color: #238276;
         border: none;
         color: white;
         margin-top: 20px;
@@ -395,8 +395,8 @@
         text-align: center;
         border-bottom-left-radius: 30px;
         border-bottom-right-radius: 30px;
-        color: #9fadca;
-        border-top: 1px solid #dee9ff;
+        color: #f3f7ff;
+        border-top: 1px solid #eeeeee;
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
     }
 
