@@ -230,7 +230,7 @@ transition-delay: 50ms;
 }
 .nav ul li a:hover{
     text-decoration: none;
-    color: #ffeba7;
+    color: #fc7323;
 }
 .nav ul li a:after{
     display: block;
@@ -374,7 +374,7 @@ transition-delay: 2.2s;
     /*-------------------------------------------------caja contenedor---------------------------------------------------- */
 
     body{
-        background-color: #f6eee0;
+        background-color: #f8efe6;
     }
 
     .registration-form{
@@ -525,7 +525,7 @@ transition-delay: 2.2s;
             margin-top: 50px;
         }
         .card {
-            background-color:#167AA5 ;
+            background-color:#fc7323 ;
             margin: 10px;
             border-radius: 10px;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
@@ -533,7 +533,7 @@ transition-delay: 2.2s;
             width: 300px;
         }
         .card-header img {
-            background-color: #167AA5 ;
+            background-color: #fc7323 ;
             width: 100%;
             height: 200px;
             object-fit: cover;
@@ -574,7 +574,7 @@ transition-delay: 2.2s;
 
         .logout {
             
-            background-color: #4caf50;
+            background-color: #fc7323;
             border: solid transparent;
             border-radius: 16px;
             border-width: 0 0 4px;
@@ -604,7 +604,7 @@ transition-delay: 2.2s;
 
         .logout:after {
             background-clip: padding-box;
-            background-color: #03FD21;
+            background-color: #fc7323;
             border: solid transparent;
             border-radius: 16px;
             border-width: 0 0 4px;

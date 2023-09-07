@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe01f18752ab48fcf0c21aab2a22c3ca",
+    "content-hash": "3780e4e415de5e6de54eb5e164db66aa",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1569,16 +1569,16 @@
         },
         {
             "name": "kreait/firebase-php",
-            "version": "7.5.2",
+            "version": "7.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kreait/firebase-php.git",
-                "reference": "95a522bff5bcb44aa7344c382a03d1b50fd4bc08"
+                "reference": "c4b4032b76839578d044f653d6c24aa51baa3026"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kreait/firebase-php/zipball/95a522bff5bcb44aa7344c382a03d1b50fd4bc08",
-                "reference": "95a522bff5bcb44aa7344c382a03d1b50fd4bc08",
+                "url": "https://api.github.com/repos/kreait/firebase-php/zipball/c4b4032b76839578d044f653d6c24aa51baa3026",
+                "reference": "c4b4032b76839578d044f653d6c24aa51baa3026",
                 "shasum": ""
             },
             "require": {
@@ -1602,16 +1602,16 @@
                 "psr/log": "^1.1|^2.0|^3.0"
             },
             "require-dev": {
-                "beste/php-cs-fixer-config": "^2.2",
-                "friendsofphp/php-cs-fixer": "^3.18",
-                "google/cloud-firestore": "^1.34.0",
+                "beste/php-cs-fixer-config": "^2.3",
+                "friendsofphp/php-cs-fixer": "^3.25.1",
+                "google/cloud-firestore": "^1.37.0",
                 "phpstan/extension-installer": "^1.3.1",
-                "phpstan/phpstan": "^1.10.20",
-                "phpstan/phpstan-phpunit": "^1.3.13",
-                "phpunit/phpunit": "^10.2.2",
-                "rector/rector": "~0.17.0",
+                "phpstan/phpstan": "^1.10.33",
+                "phpstan/phpstan-phpunit": "^1.3.14",
+                "phpunit/phpunit": "^10.3.3",
+                "rector/rector": "~0.17.13",
                 "roave/backward-compatibility-check": "^8.3",
-                "symfony/var-dumper": "^6.3.0"
+                "symfony/var-dumper": "^6.3.4"
             },
             "suggest": {
                 "google/cloud-firestore": "^1.0 to use the Firestore component"
@@ -1660,7 +1660,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-08-24T16:28:00+00:00"
+            "time": "2023-09-06T23:22:36+00:00"
         },
         {
             "name": "kreait/firebase-tokens",

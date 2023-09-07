@@ -7,12 +7,15 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+
     <!-- Estilos personalizados -->
     <style>
 
     /*-------------------------------------Header------------------------------------ */
         .header {
-                background-color: rgb(0, 0, 0); 
+                background-color:black; 
                 color: white;
                 padding: 20px;
                 font-size: 2.5rem;
@@ -48,15 +51,16 @@
             font-weight: 800;
             font-size: 3vw;
             line-height: 1;
-            color: black;
+            color: rgb(0, 0, 0);
             text-align: center;
+            padding-top: 45px;
+            padding-bottom: 45px;
             
         }
 
 
-        /*-----------------------boton ingresar rol--------------------*/
-
-        .rol{
+        /*-----------------------boton Regresar-------------------*/
+        .regresar{
             background-color: black;
             border-radius: 12px;
             color: white;
@@ -72,181 +76,172 @@
 
         }
 
-        .rol{
+        .regresar{
             background-color: white; 
             color: black; 
             border: 2px solid black;
         }
 
 
-        .rol:hover {
+        .regresar:hover {
             background-color: black; 
             color: white;
         }
+        
 
-        /*-----------------------boton ingresar rol--------------------*/
-
-        .logout{
-            background-color: black;
-            border-radius: 12px;
-            color: white;
-            padding: 13px 26px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 17px;
-            margin: 2px 1px;
-            -webkit-transition-duration: 0.4s;
-            transition-duration: 0.4s;
-            cursor: pointer;
-
-        }
-
-        .logout{
-            background-color: white; 
-            color: black; 
-            border: 2px solid black;
-        }
-
-
-        .logout:hover {
-            background-color: black; 
-            color: white;
-        }
         
 
 
 
     /*-------------------------------------------------caja contenedor---------------------------------------------------- */
 
-        body{
-            background-color: #ffffff ;
-            background-size: cover;
-            background-repeat: no-repeat;
-            
-        }
-   
+    body{
+        background-color:#ffffff;
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+    }
+
     
         
-    /* --------------fiachas ------------ */
-
         
-    .container2 {
-            display: flex;
-            width: 100%;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-            margin-top: 50px;
-            
-        }
-        .admin {
-            background-color:#238276 ;
-            margin: 10px;
-            border-radius: 10px;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            width: 350px;
-            color: #ffffff;
-        }
-
-        .admin-header {
-            color: white;
-        }
-        
-        .admin-body {
-            background-color:#fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 20px;
-            min-height: 100px;
-            color:black;
-        }
-        
-        
-        
-        .admin-body p {
-            font-size: 13px;
-            margin: 0 0 40px;
-            color:black;
-        }
-       
-        /*---------------------------------------------------- */
-
-        .instructor {
-            background-color:#39a900;
-            margin: 10px;
-            border-radius: 10px;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            width: 350px;
-            color: #ffffff;
-        }
-
-        .instructor-header {
-            color: white;
-        }
-        
-        .instructor-body {
-            background-color:#fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 20px;
-            min-height: 100px;
-            color:black;
-        }
-        
-        
-        
-        .instructor-body p {
-            font-size: 13px;
-            margin: 0 0 40px;
-            color:black;
-        }
 
     /*---------------------------------------------------- */
 
-        .student {
-            background-color:#fc7323;
-            margin: 10px;
-            border-radius: 10px;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            width: 350px;
-            color: #ffffff;
+    .registration-form{
+        padding: 50px 0;
+    }
+
+    .registration-form form{
+        background-color: #fff;
+        max-width: 600px;
+        margin: auto;
+        padding: 50px 70px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+    }
+
+    .registration-form .form-icon{
+        text-align: center;
+        background-color: black;
+        border-radius: 50%;
+        font-size: 40px;
+        color: white;
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        margin-bottom: 50px;
+        line-height: 100px;
+    }
+
+    .registration-form .item{
+        border-radius: 20px;
+        margin-bottom: 25px;
+        padding: 10px 20px;
+    }
+
+    .registration-form .create-account{
+        border-radius: 30px;
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: black;
+        border: none;
+        color: white;
+        margin-top: 20px;
+    }
+
+    .registration-form .social-media{
+        max-width: 600px;
+        background-color: #fff;
+        margin: auto;
+        padding: 35px 0;
+        text-align: center;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        color: #9fadca;
+        border-top: 1px solid #dee9ff;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+    }
+
+    .registration-form .social-icons{
+        margin-top: 30px;
+        margin-bottom: 16px;
+    }
+
+    .registration-form .social-icons a{
+        font-size: 23px;
+        margin: 0 3px;
+        color: black;
+        border: 1px solid;
+        border-radius: 50%;
+        width: 45px;
+        display: inline-block;
+        height: 45px;
+        text-align: center;
+        background-color: #fff;
+        line-height: 45px;
+    }
+
+    .registration-form .social-icons a:hover{
+        text-decoration: none;
+        opacity: 0.6;
+    }
+
+    @media (max-width: 576px) {
+        .registration-form form{
+            padding: 50px 20px;
         }
 
-        .student-header {
-            color: white;
+        .registration-form .form-icon{
+            width: 70px;
+            height: 70px;
+            font-size: 30px;
+            line-height: 70px;
         }
-        
-        .student-body {
-            background-color:#fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+
+        .icon-image {
+            width: 90px;
+            height: 90px;
+        }
+
+        .header {
+                background:linear-gradient(to left,  #36dda3, #4582b4); 
+                color: white;
+                padding: 20px;
+                font-size: 20px;
+                height: 130px;
+                font-weight: bold;
+                line-height: 90px;
+            }
+
+        .nav ul li a{
+            font-size: 3vh;
+        }
+    }
+
+        .content {
             padding: 20px;
-            min-height: 100px;
-            color:black;
-        }
-        
-        
-        
-        .student-body p {
-            font-size: 13px;
-            margin: 0 0 40px;
-            color:black;
-        }
+        }  
 
+        
+        
+        .caja{
+            align-items: center!important;
+            width: 1200px;
+            height: 254px;
+            border-radius: 30px;
+            background: lightgrey;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+
+        }
+       
     /*---------------------------------------------------- */
     /*footer*/
 
 
-            .footer-distributed {
+    .footer-distributed {
                 background-color: black;
                 box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
                 box-sizing: border-box;
@@ -316,8 +311,6 @@
                 transition:all .25s;
                 }
 
-            
-
         
         
     </style>
@@ -325,12 +318,7 @@
 <body>
     <header class="header">
         Sistema de Asistencia
-    </header>
-        
-
-
-
-        
+    </header> 
     
     <main class="content">
         @yield('content')
@@ -359,13 +347,7 @@
     <!-- Opcional: JavaScript de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybB5Vj1X2FB5c//8Ezj1GX6kXpDpODf6G1U6gx/wB2I5fA/" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
 </body>
 </html>
-
-
-
-<!--<header class="header">
-        Sistema de Asistencia
-        <a href="{{ route('profile.show') }}">Ver perfil</a>
-
-    </header>-->

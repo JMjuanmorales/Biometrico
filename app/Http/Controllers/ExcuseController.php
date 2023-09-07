@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Kreait\Firebase\Exception\FirebaseException;
 use Kreait\Firebase\Factory;
+use Illuminate\Support\Carbon;
 use Google\Cloud\Core\ExponentialBackoff;
 use Kreait\Firebase\ServiceAccount;
 
@@ -55,24 +56,41 @@ public function store(Request $request)
         return redirect()->route('dashboard')->with('success', 'Excusa enviada correctamente.');
     }
 
-    public function download($filename){
-        // Ruta al archivo en Firebase Storage
+    public function download($filename)
+{
+    try {
+
         $rutaArchivo = 'files/excuses/' . $filename;
 
+        // Carga las credenciales desde el archivo JSON directamente
+        $pathToServiceAccount = base_path('storage_credentials.json'); 
+
         // Crea una instancia de Firebase
-        $factory = new Factory();
-        $firebase = $factory->withServiceAccount(config('firebase.credentials'))
-                            ->withDatabaseUri(config('firebase.database_url'))
-                            ->create();
+        $factory = (new Factory)
+                    ->withServiceAccount($pathToServiceAccount)
+                    ->withDatabaseUri('https://biometric-service-35fc8.firebaseio.com');
+
+        // Obtiene una instancia de Firebase Storage
+        $storage = $factory->createStorage();
+
+        // Obtiene una referencia al bucket
+        $bucket = $storage->getBucket();
 
         // Obtiene una referencia al archivo en Firebase Storage
-        $storage = $firebase->getStorage();
-        $archivoRef = $storage->getObject($rutaArchivo);
+        $archivoRef = $bucket->object($rutaArchivo);
 
-        // Genera una URL de descarga firmada para el archivo (válida por 15 minutos)
-        $url = $archivoRef->signedUrl(now()->addMinutes(15));
+        // Verifica si el objeto existe
+        if ($archivoRef->exists()) {
+            // Genera una URL de descarga firmada para el archivo (válida por 15 minutos)
+            $url = $archivoRef->signedUrl(now()->addMinutes(15));
 
-        // Redirige al usuario a la URL de descarga
-        return redirect($url);
+            // Redirige al usuario a la URL de descarga
+            return redirect($url);
+        } else {
+            return response()->json(['error' => 'Archivo no encontrado'], 404);
+        }
+    } catch (\Exception $e) {
+        return response()->json(['error' => 'Error al descargar el archivo: ' . $e->getMessage()], 500);
+    }
     }
 }

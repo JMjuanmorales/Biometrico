@@ -228,7 +228,7 @@ transition-delay: 50ms;
 }
 .nav ul li a:hover{
     text-decoration: none;
-    color: #ffeba7;
+    color: #39a900;
 }
 .nav ul li a:after{
     display: block;
@@ -351,7 +351,7 @@ transition-delay: 1.5s;
         padding: 10px 20px;
         font-size: 18px;
         font-weight: bold;
-        background-color: #5791ff;
+        background-color: #39a900;
         border: none;
         color: white;
         margin-top: 20px;
@@ -378,7 +378,7 @@ transition-delay: 1.5s;
     .registration-form .social-icons a{
         font-size: 23px;
         margin: 0 3px;
-        color: #5691ff;
+        color: #39a900;
         border: 1px solid;
         border-radius: 50%;
         width: 45px;
@@ -460,7 +460,7 @@ transition-delay: 1.5s;
             margin-top: 50px;
         }
         .card {
-            background-color:#167AA5 ;
+            background-color:#39a900 ;
             margin: 10px;
             border-radius: 10px;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
@@ -468,7 +468,7 @@ transition-delay: 1.5s;
             width: 300px;
         }
         .card-header img {
-            background-color: #167AA5 ;
+            background-color: #39a900 ;
             width: 100%;
             height: 200px;
             object-fit: cover;
@@ -779,6 +779,8 @@ transition-delay: 1.5s;
         
         table, td, th { 
             text-align: center;
+            font-family: "Calibri";
+            background-color: #fff;
 
         }
 

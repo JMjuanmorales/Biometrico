@@ -3,11 +3,14 @@
 @section('content')
     
 <div class="container">
+
     <button class="regresar" onclick="return window.history.back();">Retroceder</button>
+
     <h1>Crear varios usuarios</h1>
-    <div class="row">
-        <div class="col-md-6 mx-auto">
-            <h4>Registrar varios usuarios</h4>
+
+    <div class="registration-form">
+        
+            
 
             <form action="{{ route('admin.store-users') }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -28,9 +31,9 @@
 
                 <!-- Agrega más campos del formulario según sea necesario -->
                 
-                <button type="submit" class="btn btn-primary">Registrar</button>
+                <button type="submit" class="regresar">Registrar</button>
             </form>
-        </div>
+        
     </div>
 </div>
 

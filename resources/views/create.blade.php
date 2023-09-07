@@ -7,6 +7,8 @@
     
     <h1>Crear nuevo usuario</h1>
 
+    <a class="regresar" href="{{ route('admin.create-users') }}">Crear varios usuarios</a>
+
     <div class="registration-form">
     <form action="{{ route('admin.store-user') }}" method="POST">
         @csrf
@@ -94,15 +96,6 @@
         </div>
 
     </form>
-
-    
-
-    <li><a href="{{ route('admin.create-users') }}">Crear usuario</a></li>
-
-    
-
-
-
 
 </div>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
