@@ -76,5 +76,9 @@ class InstructorController extends Controller
         return redirect()->route('instructor.excuses',['group_id'=>$excuse->student->group_id]);
     }
 
+    public function showScanPage(){
+        return view('instructor_scan');
+    }
+
 
 }

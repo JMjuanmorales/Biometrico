@@ -16,45 +16,17 @@ class DashboardController extends Controller
     {
         $user = Auth::user();
         $selectedDate = $request->input('date', '');
+
+        // Consulta de asistencias
         $attendancesQuery = Attendance::where('user_id', $user->id);
-        
-        
-        
 
-        $startDate = '2023-07-27'; 
-        $endDate = date('Y-m-d'); 
-        $dateRange = $this->createDateRange($startDate, $endDate);
-        $dateRange = array_reverse($dateRange);
-
-
+        // Filtrado por fecha, si es necesario
         if ($selectedDate) {
             $attendancesQuery->whereDate('date', $selectedDate);
-            $dateRange = [$selectedDate];
-        } else {
-            $attendancesQuery->orderBy('date', 'desc');
-            $dateRange = $this->createDateRange($startDate, $endDate);
-            $dateRange = array_reverse($dateRange);
         }
 
-        
-        $attendancesArray = $attendancesQuery->get()->keyBy('date')->toArray();
-
-        
-        $attendanceStatuses = [];
-        foreach ($dateRange as $date) {
-            if (isset($attendancesArray[$date])) {
-                $attendanceStatuses[] = $attendancesArray[$date];
-            } else {
-                $attendanceStatuses[] = [
-                    'date' => $date,
-                    'status' => 'Ausente',
-                    
-                ];
-            }
-        }
-
-        
-        $attendanceStatuses = collect($attendanceStatuses)->paginate(10);
+        // Ordenación y paginación
+        $attendanceStatuses = $attendancesQuery->orderBy('date', 'desc')->paginate(10);
 
         return view('dashboard', compact('attendanceStatuses', 'selectedDate'));
     }

@@ -8,10 +8,14 @@
 
     <h1>Panel de control del profesor</h1> 
 
+    
+    @if($students->isNotEmpty())
     <div class="botonVerExcusa" >
         <a href="{{ route('instructor.excuses',['group_id' => $group->id])}}" class="verExcusa">Ver Excusas</a>
     </div>
-    @if($students->isNotEmpty())
+    <div class="botonVerExcusa" >
+        <a href="{{ route('instructor.scan',['group_id' => $group->id])}}" class="verExcusa">Escaner</a>
+    </div>
         <h2>Historial de asistencia de los estudiantes - Grupo {{ $students->first()->group->name }}</h2>
 
         <form method="GET" action="{{ route('instructor.group', ['group_id' => $group->id]) }}">

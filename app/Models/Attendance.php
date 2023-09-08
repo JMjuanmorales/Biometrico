@@ -25,7 +25,7 @@ class Attendance extends Model
 
     public function scopeOnlyAbsences($query)
     {
-        return $query->where('status', 'absent');
+        return $query->where('status', 'ausente');
     }
     
 }

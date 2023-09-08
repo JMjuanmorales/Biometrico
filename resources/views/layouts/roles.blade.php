@@ -209,7 +209,7 @@
 
     /*---------------------------------------------------- */
 
-        .student {
+        .aprendiz {
             background-color:#fc7323;
             margin: 10px;
             border-radius: 10px;
@@ -219,11 +219,11 @@
             color: #ffffff;
         }
 
-        .student-header {
+        .aprendiz-header {
             color: white;
         }
         
-        .student-body {
+        .aprendiz-body {
             background-color:#fff;
             display: flex;
             flex-direction: column;
@@ -236,7 +236,7 @@
         
         
         
-        .student-body p {
+        .aprendiz-body p {
             font-size: 13px;
             margin: 0 0 40px;
             color:black;
