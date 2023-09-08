@@ -37,15 +37,24 @@
             <tbody>
                 @foreach ($students as $student)
                     @php
-                        $attendance = $student->attendances->first();
+                        $firstAttendance = $student->attendances->first();
                     @endphp
                     <tr>
                         <td>{{ $student->name }}</td>
                         <td>{{ $date }}</td>
-                        <td>{{ $attendance && $attendance->check_in_time ? \Carbon\Carbon::parse($attendance->check_in_time)->format('H:i') : 'No registrado' }}</td>
-                        <td>{{ $attendance && $attendance->check_out_time ? \Carbon\Carbon::parse($attendance->check_out_time)->format('H:i') : 'No registrado' }}</td>
-                        <td>{{ $attendance ? $attendance->status : 'Inasistente' }}</td>
+                        <td>{{ $firstAttendance && $firstAttendance->check_in_time ? \Carbon\Carbon::parse($firstAttendance->check_in_time)->format('H:i') : 'No registrado' }}</td>
+                        <td>{{ $firstAttendance && $firstAttendance->check_out_time ? \Carbon\Carbon::parse($firstAttendance->check_out_time)->format('H:i') : 'No registrado' }}</td>
+                        <td>{{ $firstAttendance ? $firstAttendance->status : 'Inasistente' }}</td>
                     </tr>
+                    @foreach ($student->attendances->slice(1) as $additionalAttendance)
+                        <tr>
+                            <td>{{ $student->name }}</td>
+                            <td>{{ $date }}</td>
+                            <td>{{ $additionalAttendance->check_in_time ? \Carbon\Carbon::parse($additionalAttendance->check_in_time)->format('H:i') : 'No registrado' }}</td>
+                            <td>{{ $additionalAttendance->check_out_time ? \Carbon\Carbon::parse($additionalAttendance->check_out_time)->format('H:i') : 'No registrado' }}</td>
+                            <td>{{ $additionalAttendance->status }}</td>
+                        </tr>
+                    @endforeach
                 @endforeach
             </tbody>
         </table>
