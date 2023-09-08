@@ -40,7 +40,7 @@ class AdminController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:8|confirmed',
             'roles' => 'required|array',
-            'roles.*' => 'in:student,instructor,admin',
+            'roles.*' => 'in:aprendiz,instructor,admin',
             'group_id' => 'nullable|exists:groups,id',
         ], [
             'email.unique' => 'El correo ya está registrado',
@@ -63,9 +63,10 @@ class AdminController extends Controller
 
         $roles = Role::whereIn('name', $validatedData['roles'])->get();
         $user->roles()->attach($roles);
-        Log::info('Request data:', $request->all());
 
-        return redirect()->route('admin.create-user')->with('success', 'Usuario creado correctamente');
+        session()->flash('success', 'Usuario creado correctamente');
+
+        return redirect()->route('admin.create-user');
     }
 
     
@@ -117,7 +118,9 @@ class AdminController extends Controller
         $roles = Role::whereIn('name', $validatedData['roles'])->get();
         $user->roles()->sync($roles);
 
-        return redirect()->route('admin.users')->with('success', 'Usuario actualizado correctamente');
+        session()->flash('success', 'Usuario actualizado correctamente');
+
+        return redirect()->route('admin.users');
     }
 
     public function manyUsers(Request $request) {
@@ -165,11 +168,13 @@ class AdminController extends Controller
             }
     
             if (count($existingUsers) === count($usersData)) {
-                return redirect()->route('admin.users')->with('error', 'Todos los usuarios ya estan registrados');
+                session()->flash('error', 'Todos los usuarios ya estan registrados');
+                return redirect()->route('admin.users');
             }
 
-    
-            return redirect()->route('admin.users')->with('success', 'Usuarios registrados correctamente');
+            session()->flash('success', 'Usuarios registrados correctamente');    
+
+            return redirect()->route('admin.users');
         }
     }
 
@@ -200,6 +205,8 @@ class AdminController extends Controller
 
         $program->save();
 
+        session()->flash('success', 'Programa creado correctamente');
+
         return redirect()->route('admin.create-user')->with('success', 'Programa creado correctamente.');
     }
 
@@ -225,7 +232,9 @@ class AdminController extends Controller
 
         $group->save();
 
-        return redirect()->route('admin.create-user')->with('success', 'Grupo creado correctamente.');
+        session()->flash('success', 'Grupo creado correctamente');
+
+        return redirect()->route('admin.create-user');
     }
 
     public function listGroups(Request $request){

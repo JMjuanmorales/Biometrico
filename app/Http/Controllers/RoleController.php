@@ -22,7 +22,7 @@ class RoleController extends Controller
         session(['selected_role' => $request->role]);
 
         switch ($request->role) {
-            case 'student':
+            case 'aprendiz':
                 return redirect()->route('dashboard');
             case 'instructor':
                 return redirect()->route('instructor.groups');

@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
         // Crear roles
         $adminRole = Role::firstOrCreate(['name' => 'admin']);
         $instructorRole = Role::firstOrCreate(['name' => 'instructor']);
-        $studentRole = Role::firstOrCreate(['name' => 'student']);
+        $studentRole = Role::firstOrCreate(['name' => 'aprendiz']);
 
         // Crear usuario administrador
         $adminUser = User::create([

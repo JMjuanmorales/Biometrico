@@ -40,7 +40,9 @@ class AttendanceController extends Controller
         $newAttendance->session_id = $newSessionId;
         $newAttendance->save();
 
-        return redirect()->back()->with('success', 'Entrada registrada exitosamente.');
+        session()->flash('success', 'Entrada registrada exitosamente');
+
+        return redirect()->back();
         }
 
     public function checkOut(Request $request)
@@ -56,13 +58,16 @@ class AttendanceController extends Controller
             ->first();
 
         if (!$attendance) {
-            return redirect()->back()->with('error', 'No has registrado tu entrada hoy.');
+            session()->flash('error', 'No has registrado tu entrada hoy');
+            return redirect()->back();
         } else {
             
             $attendance->check_out_time = now();
             $attendance->save();
 
-            return redirect()->back()->with('success', 'Salida registrada exitosamente.');
+            session()->flash('success', 'Salida registrada exitosamente');
+
+            return redirect()->back();
         }
     }
 
@@ -87,7 +92,7 @@ class AttendanceController extends Controller
 
         
         $students = User::whereHas('roles', function ($query) {
-            $query->where('name', 'student');
+            $query->where('name', 'aprendiz');
         })->where('group_id', $group_id)
         ->with(['attendances' => function ($query) use ($selectedDate) {
             if (!empty($selectedDate)) {

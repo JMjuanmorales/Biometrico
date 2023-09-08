@@ -47,7 +47,7 @@ class DashboardController extends Controller
             } else {
                 $attendanceStatuses[] = [
                     'date' => $date,
-                    'status' => 'absent',
+                    'status' => 'Ausente',
                     
                 ];
             }

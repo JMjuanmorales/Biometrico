@@ -35,7 +35,7 @@ class InstructorController extends Controller
 
         $students = User::where('group_id', $group_id)
             ->whereHas('roles', function($query) {
-                $query->where('name', 'student');
+                $query->where('name', 'aprendiz');
             })
             ->with(['attendances' => function ($query) use ($date) {
                 $query->whereDate('date', $date);
@@ -48,10 +48,10 @@ class InstructorController extends Controller
     public function listExcuses($group_id)
     {
         $students = User::where('group_id', $group_id)->whereHas('roles', function($query) {
-            $query->where('name', 'student');
+            $query->where('name', 'aprendiz');
         })->get();
 
-        $excuses = Excuse::whereIn('user_id', $students->pluck('id'))->with('student')->get();
+        $excuses = Excuse::whereIn('user_id', $students->pluck('id'))->with('aprendiz')->get();
 
         return view('excuse_list', compact('excuses', 'group_id'));
     }
@@ -60,20 +60,20 @@ class InstructorController extends Controller
     public function approveExcuse($id)
     {
         $excuse = Excuse::findOrFail($id);
-        $excuse->status = 'approved';
+        $excuse->status = 'Aprobada';
         
         $excuse->save();
 
-        return redirect()->route('instructor.excuses',['group_id'=>$excuse->student->group_id])->with('success', 'Excusa aprobada correctamente');
+        return redirect()->route('instructor.excuses',['group_id'=>$excuse->student->group_id]);
     }
 
     public function rejectExcuse($id)
     {
         $excuse = Excuse::findOrFail($id);
-        $excuse->status = 'rejected';
+        $excuse->status = 'Rechazada';
         $excuse->save();
 
-        return redirect()->route('instructor.excuses',['group_id'=>$excuse->student->group_id])->with('success', 'Excusa rechazada correctamente');
+        return redirect()->route('instructor.excuses',['group_id'=>$excuse->student->group_id]);
     }
 
 

@@ -35,7 +35,7 @@
                     <td>{{ $excuse->status }}</td>
 
                     <td>
-                        @if ($excuse->status === 'pending')
+                        @if ($excuse)
                             <a href="{{ route('excuse.approve', ['id' => $excuse->id]) }}" class="botones2">Aceptar</a>
                             <a href="{{ route('excuse.reject', ['id' => $excuse->id]) }}" class="botones1">Rechazar</a>
                         @endif
