@@ -4,7 +4,7 @@
     
 <div class="container">
 
-    <button class="regresar" onclick="return window.history.back();">Retroceder</button>
+    <button class="regresar" onclick="window.history.back()">Retroceder</button>
 
     <h1>Crear varios usuarios</h1>
 

@@ -14,7 +14,7 @@
         .header {
                 background-color: rgb(0, 0, 0); 
                 color: white;
-                padding: 20px;
+                padding: 3px;
                 font-size: 2.5rem;
                 height: 130px;
                 font-weight: bold;
@@ -209,7 +209,7 @@
 
     /*---------------------------------------------------- */
 
-        .student {
+        .aprendiz {
             background-color:#fc7323;
             margin: 10px;
             border-radius: 10px;
@@ -219,11 +219,11 @@
             color: #ffffff;
         }
 
-        .student-header {
+        .aprendiz-header {
             color: white;
         }
         
-        .student-body {
+        .aprendiz-body {
             background-color:#fff;
             display: flex;
             flex-direction: column;
@@ -236,7 +236,7 @@
         
         
         
-        .student-body p {
+        .aprendiz-body p {
             font-size: 13px;
             margin: 0 0 40px;
             color:black;
@@ -324,6 +324,7 @@
 </head>
 <body>
     <header class="header">
+        <img class="icon-image" src="{{url('images/logo-sena2.svg')}}" alt="">
         Sistema de Asistencia
     </header>
         
@@ -348,6 +349,8 @@
         <a href="#">Angie Jimenez</a>
   
         <a href="#">Esteban Morales</a>
+
+        <img class="icon-image" src="{{url('images/logo-sena2.svg')}}" alt="">
   
       </p>
   

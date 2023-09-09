@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <a class="logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-        {{ __('Logout') }}
+        {{ __('Salir') }}
     </a>
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf

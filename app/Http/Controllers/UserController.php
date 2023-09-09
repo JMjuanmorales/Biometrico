@@ -77,14 +77,14 @@ class UserController extends Controller
                 session(['selected_role' => $role]);
     
                 switch ($role) {
-                    case 'student':
+                    case 'aprendiz':
                         return redirect()->route('dashboard')->with('success', 'Inicio de sesion exitoso');
                     case 'instructor':
                         return redirect()->route('instructor.groups')->with('success', 'Inicio de sesion exitoso');
                     case 'admin':
                         return redirect()->route('admin.create-user')->with('success', 'Inicio de sesion exitoso');
                     default:
-                        return redirect()->route('home')->with('success', 'Inicio de sesion exitoso');
+                        return redirect()->back()->with('error', 'Inicio de sesion exitoso');
                 }
             }
         }
@@ -128,7 +128,9 @@ class UserController extends Controller
             
         ]);
 
-        return redirect()->route('profile.show')->with('success', 'Perfil actualizado correctamente');
+        session()->flash('success', 'Perfil actualizado correctamente');
+
+        return redirect()->route('profile.show');
     }
 
 }

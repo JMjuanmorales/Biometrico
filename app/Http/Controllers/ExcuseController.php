@@ -49,11 +49,12 @@ public function store(Request $request)
                 $excuse->document_path = $filename;
             };
             
-            $excuse->status = 'pending';
+            $excuse->status = 'Pendiente';
             $excuse->save();
 
+            session()->flash('success', 'Excusa enviada correctamente');
 
-        return redirect()->route('dashboard')->with('success', 'Excusa enviada correctamente.');
+            return redirect()->route('dashboard');
     }
 
     public function download($filename)

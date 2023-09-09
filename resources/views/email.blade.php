@@ -1,4 +1,4 @@
-@extends('layouts.formulario')
+@extends('layouts.profile')
 
 @section('content')
 

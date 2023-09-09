@@ -17,7 +17,7 @@
         .header {
                 background-color:black; 
                 color: white;
-                padding: 20px;
+                padding: 3px;
                 font-size: 2.5rem;
                 height: 130px;
                 font-weight: bold;
@@ -317,6 +317,7 @@
 </head>
 <body>
     <header class="header">
+        <img class="icon-image" src="{{url('images/logo-sena2.svg')}}" alt="">
         Sistema de Asistencia
     </header> 
     
@@ -336,10 +337,12 @@
         <a href="#">Angie Jimenez</a>
   
         <a href="#">Esteban Morales</a>
+
+        <img class="icon-image" src="{{url('images/logo-sena2.svg')}}" alt="">
   
       </p>
   
-      <p>Biometric Services &copy; 2023</p>
+      <p>   QR Services &copy; 2023</p>
     </div>
   
   </footer>

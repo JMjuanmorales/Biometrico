@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('absence_date');
             $table->text('justification');
             $table->string('document_path')->nullable();
-            $table->string('status')->default('pending');
+            $table->string('status')->default('Pendiente');
             $table->timestamps();
         });
     }

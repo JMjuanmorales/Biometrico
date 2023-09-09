@@ -19,50 +19,45 @@ class AttendanceController extends Controller
 
     public function checkIn(Request $request)
     {
-
-        $user = Auth::user();
+        $userId = $request->input('user_id');
         $today = date('Y-m-d');
 
-        
-        $lastAttendance = Attendance::where('user_id', $user->id)
+        $lastAttendance = Attendance::where('user_id', $userId)
             ->where('date', $today)
             ->orderBy('session_id', 'desc')
             ->first();
 
         $newSessionId = $lastAttendance ? $lastAttendance->session_id + 1 : 1;
 
-        
         $newAttendance = new Attendance();
-        $newAttendance->user_id = $user->id;
+        $newAttendance->user_id = $userId;
         $newAttendance->date = $today;
         $newAttendance->check_in_time = now();
         $newAttendance->status = 'presente';
         $newAttendance->session_id = $newSessionId;
         $newAttendance->save();
 
-        return redirect()->back()->with('success', 'Entrada registrada exitosamente.');
-        }
+        return response()->json(['success' => true]);
+    }
 
     public function checkOut(Request $request)
     {
-        $user = Auth::user();
+        $userId = $request->input('user_id');
         $today = date('Y-m-d');
 
-        
-        $attendance = Attendance::where('user_id', $user->id)
+        $attendance = Attendance::where('user_id', $userId)
             ->where('date', $today)
             ->whereNull('check_out_time')
             ->orderBy('session_id', 'desc')
             ->first();
 
         if (!$attendance) {
-            return redirect()->back()->with('error', 'No has registrado tu entrada hoy.');
+            return response()->json(['success' => false, 'error' => 'No check-in registrado para hoy']);
         } else {
-            
             $attendance->check_out_time = now();
             $attendance->save();
 
-            return redirect()->back()->with('success', 'Salida registrada exitosamente.');
+            return response()->json(['success' => true]);
         }
     }
 
@@ -87,7 +82,7 @@ class AttendanceController extends Controller
 
         
         $students = User::whereHas('roles', function ($query) {
-            $query->where('name', 'student');
+            $query->where('name', 'aprendiz');
         })->where('group_id', $group_id)
         ->with(['attendances' => function ($query) use ($selectedDate) {
             if (!empty($selectedDate)) {

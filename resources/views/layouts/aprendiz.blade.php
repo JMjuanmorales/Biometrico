@@ -1023,6 +1023,7 @@ transition-delay: 2.2s;
 </head>
 <body>
     <header class="header">
+        <img class="icon-image" src="{{url('images/logo-sena2.svg')}}" alt="">
         Sistema de Asistencia
     </header>
         
@@ -1063,9 +1064,11 @@ transition-delay: 2.2s;
         <a href="#">Angie Jimenez</a>
   
         <a href="#">Esteban Morales</a>
+
+        <img class="icon-image" src="{{url('images/logo-sena2.svg')}}" alt="">
       </p>
   
-      <p>Biometric Services &copy; 2023</p>
+      <p>QR Services &copy; 2023</p>
     </div>
   
   </footer>

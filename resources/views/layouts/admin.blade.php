@@ -17,13 +17,18 @@
         .header {
                 background-color:#238276; 
                 color: white;
-                padding: 20px;
+                padding: 3px;
                 font-size: 2.5rem;
                 height: 130px;
                 font-weight: bold;
                 line-height: 90px;
                 opacity: 0.8;
             }
+            
+        .icon-image-header {
+            width: 140px;
+            height: 140px;
+        }
 
     /*------------------------------------------menu header----------------------------------------------------------- */
 
@@ -408,7 +413,7 @@
     .registration-form .social-icons a{
         font-size: 23px;
         margin: 0 3px;
-        color: #5691ff;
+        color: #238276;
         border: 1px solid;
         border-radius: 50%;
         width: 45px;
@@ -442,7 +447,7 @@
         }
 
         .header {
-                background:linear-gradient(to left,  #36dda3, #4582b4); 
+                background-color:#238276; 
                 color: white;
                 padding: 20px;
                 font-size: 20px;
@@ -459,7 +464,7 @@
     /* ----------------Checkbox-------------- */
 
     .form-check-input {
-        border: 1px solid blue;
+        border: 1px solid #238276;
         border-radius: 3px;
         width: 16px;
         height: 16px;
@@ -492,7 +497,7 @@
 
     th {
             border-top: 1px solid;
-            background: rgb(26, 75, 199);
+            background: #238276;
         }
 
         
@@ -501,7 +506,7 @@
             border-right: 1px solid;
             border-left: 1px solid;
             border-collapse: collapse;
-            background: #4582b4; 
+            background: #238276; 
         }
 
     thead th {
@@ -527,7 +532,7 @@
             margin-top: 50px;
         }
         .card {
-            background-color:#167AA5 ;
+            background-color:#238276 ;
             margin: 10px;
             border-radius: 10px;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
@@ -535,7 +540,7 @@
             width: 300px;
         }
         .card-header img {
-            background-color: #167AA5 ;
+            background-color: #238276 ;
             width: 100%;
             height: 200px;
             object-fit: cover;
@@ -654,6 +659,7 @@
 </head>
 <body>
     <header class="header">
+        <img class="icon-image" src="{{url('images/logo-sena2.svg')}}" alt="">
         Sistema de Asistencia
     </header>
         
@@ -703,10 +709,15 @@
         <a href="#">Angie Jimenez</a>
   
         <a href="#">Esteban Morales</a>
+
+        <img class="icon-image-header" src="{{url('images/logo-sena2.svg')}}" alt="">
   
       </p>
   
-      <p>Biometric Services &copy; 2023</p>
+      <p>QR Services &copy; 2023</p>
+
+    
+
     </div>
   
   </footer>

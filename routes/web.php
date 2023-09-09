@@ -36,10 +36,8 @@ Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('
 
 //Rutas para el aprendiz
 
-Route::middleware(['auth', 'role:student'])->group(function () {
+Route::middleware(['auth', 'role:aprendiz'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::post('/attendance/check-in', [AttendanceController::class, 'checkIn'])->name('attendance.check-in');
-    Route::post('/attendance/check-out', [AttendanceController::class, 'checkOut'])->name('attendance.check-out');
     Route::get('/excuse/create', [ExcuseController::class, 'create'])->name('excuse.create');
     Route::post('/excuse', [ExcuseController::class, 'store'])->name('excuse.store');
     Route::get('/excuses', [DashboardController::class, 'viewExcuses'])->name('excuses');
@@ -60,6 +58,10 @@ Route::middleware(['auth', 'role:instructor'])->group(function () {
     Route::get('/instructor/create-group', [InstructorController::class, 'showCreateGroupForm'])->name('instructor.create-group.form');
     Route::post('/instructor/create-group', [InstructorController::class, 'createGroup'])->name('instructor.create-group');
     Route::get('/instructor/descargar-pdf/{filename}', [ExcuseController::class, 'download'])->name('descargar');
+    Route::get('/instructor/scan', [InstructorController::class, 'showScanPage'])->name('instructor.scan');
+    Route::post('/attendance/check-in', [AttendanceController::class, 'checkIn'])->name('attendance.check-in');
+    Route::post('/attendance/check-out', [AttendanceController::class, 'checkOut'])->name('attendance.check-out');
+
 
 
 });

@@ -30,7 +30,7 @@
                 <label for="name"><p>Fecha de registro: {{ $user->created_at->format('d-m-Y') }}</p></label>  
             </div>
             <div class="form-group">
-                {{QrCode::size(150)->generate($user->email)}}
+                {{QrCode::size(150)->generate($user->id)}}
             </div>
             <br>
             
