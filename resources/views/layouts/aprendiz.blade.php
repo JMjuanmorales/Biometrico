@@ -11,11 +11,15 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@100&family=Work+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    
     <!-- Estilos personalizados -->
     <style>
         *{
-            font-family: 'Lato', sans-serif;
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Work Sans', sans-serif;
         }
         
 
@@ -23,7 +27,7 @@
         .header {
                 background-color: #fc7323; 
                 color: white;
-                padding: 20px;
+                padding: 3px;
                 font-size: 2.5rem;
                 height: 130px;
                 font-weight: bold;
@@ -1018,6 +1022,12 @@ transition-delay: 2.2s;
                 transition:all .25s;
                 }
 
+            .icon-image-footer {
+                width: 100px;
+                height: 100px;
+                
+            }
+
 
     </style>
 </head>
@@ -1065,7 +1075,7 @@ transition-delay: 2.2s;
   
         <a href="#">Esteban Morales</a>
 
-        <img class="icon-image" src="{{url('images/logo-sena2.svg')}}" alt="">
+        <img class="icon-image-footer" src="{{url('images/logo-sena2.svg')}}" alt="">
       </p>
   
       <p>QR Services &copy; 2023</p>

@@ -11,10 +11,18 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@100&family=Work+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
     <!-- Estilos personalizados -->
     <style>
+
+        video{
+            padding: 3px;
+        }
         *{
-            font-family: 'Work Sans';
+            font-family: 'Work Sans', sans-serif;
         }
         body {
             background-color: #f0f2f5;
@@ -319,7 +327,7 @@ transition-delay: 1.5s;
 
     .registration-form form{
         background-color: #fff;
-        max-width: 600px;
+        max-width: 800px;
         margin: auto;
         padding: 50px 70px;
         border-top-left-radius: 30px;
@@ -952,6 +960,12 @@ transition-delay: 1.5s;
                 transition:all .25s;
                 }
 
+            .icon-image-footer {
+                width: 100px;
+                height: 100px;
+                
+            }
+
 
     </style>
 </head>
@@ -1000,7 +1014,7 @@ transition-delay: 1.5s;
   
         <a href="#">Esteban Morales</a>
 
-        <img class="icon-image" src="{{url('images/logo-sena2.svg')}}" alt="">
+        <img class="icon-image-footer" src="{{url('images/logo-sena2.svg')}}" alt="">
       </p>
   
       <p>QR Services &copy; 2023</p>

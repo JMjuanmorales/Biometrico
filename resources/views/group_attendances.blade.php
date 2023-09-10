@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     
-    <button class="regresar" onclick="return window.history.back();">Retroceder</button>
+    <a onclick="window.history.back()"><img class="atras" src="{{ url('images/flecha-izquierda3.png') }}"></a>
 
 
     <h1>Panel de control del profesor</h1> 
@@ -11,17 +11,10 @@
     
     @if($students->isNotEmpty())
     <div class="botonVerExcusa" >
-<<<<<<< HEAD
         <a href="{{ route('instructor.excuses',['group_id' => $group->id])}}" class="regresar">Ver Excusas</a>
     </div>
     <div class="botonVerExcusa" >
         <a href="{{ route('instructor.scan',['group_id' => $group->id])}}" class="regresar">Escaner</a>
-=======
-        <a href="{{ route('instructor.excuses',['group_id' => $group->id])}}" class="verExcusa">Ver Excusas</a>
-    </div>
-    <div class="botonVerExcusa" >
-        <a href="{{ route('instructor.scan',['group_id' => $group->id])}}" class="verExcusa">Escaner</a>
->>>>>>> 202b10599ef98659d08b7ca9ddd664da70706fa3
     </div>
         <h2>Historial de asistencia de los estudiantes - Grupo {{ $students->first()->group->name }}</h2>
 

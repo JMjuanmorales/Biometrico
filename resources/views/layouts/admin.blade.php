@@ -9,10 +9,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@100&family=Work+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    
     <!-- Estilos personalizados -->
     <style>
-
+        *{
+            font-family: 'Work Sans', sans-serif;
+        }
     /*-------------------------------------Header------------------------------------ */
         .header {
                 background-color:#238276; 
@@ -28,6 +35,7 @@
         .icon-image-header {
             width: 140px;
             height: 140px;
+
         }
 
     /*------------------------------------------menu header----------------------------------------------------------- */
@@ -227,7 +235,7 @@
         }
         .nav ul li a:hover{
             text-decoration: none;
-            color: #ffeba7;
+            color: #238276;
         }
         .nav ul li a:after{
             display: block;
@@ -238,8 +246,8 @@
             margin-top: -1vh;
             width: 0;
             left: 0;
-            background-color: #353746;
-            opacity: 0.8;
+            background-color: #b4b4b6;
+            opacity: 0.50;
             transition: width 250ms linear;
         }
         .nav ul li a:hover:after{
@@ -653,6 +661,17 @@
                 transition:all .25s;
                 }
 
+            .icon-image-footer {
+                width: 100px;
+                height: 100px;
+                
+            }
+
+            .atras{
+                width: 50px;
+                height: 50px;
+            }
+
         
         
     </style>
@@ -710,13 +729,11 @@
   
         <a href="#">Esteban Morales</a>
 
-        <img class="icon-image-header" src="{{url('images/logo-sena2.svg')}}" alt="">
+        <img class="icon-image-footer" src="{{url('images/logo-sena2.svg')}}" alt="">
   
       </p>
   
       <p>QR Services &copy; 2023</p>
-
-    
 
     </div>
   

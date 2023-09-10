@@ -3,7 +3,7 @@
 @section('content')
     <div class="registration-form">
         
-        <button class="regresar" onclick="return window.history.back();">Retroceder</button>
+        <a onclick="window.history.back()"><img class="atras" src="{{ url('images/flecha.png') }}"></a>
 
 
         <form method="POST" action="{{ route('password.update') }}">

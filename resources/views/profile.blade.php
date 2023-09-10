@@ -3,7 +3,7 @@
 @section('content')
     
 
-<button class="regresar" onclick="return window.history.back();">Retroceder</button>
+<a onclick="window.history.back()"><img class="atras" src="{{ url('images/flecha.png') }}"></a>
 
 <h1>Perfil de {{ $user->name }}</h1>
 <div class="registration-form">

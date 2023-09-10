@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     
-    <button class="regresar" onclick="return window.history.back();">Retroceder</button>
+    <a onclick="window.history.back()"><img class="atras" src="{{ url('images/flecha-izquierda.png') }}"></a>
 
     <h1>Crear Grupo</h1>
 

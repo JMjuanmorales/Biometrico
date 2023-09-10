@@ -4,7 +4,7 @@
 
 <div class="container">
     
-    <button class="regresar" onclick="return window.history.back();">Retroceder</button>
+    <a onclick="window.history.back()"><img class="atras" src="{{ url('images/flecha-izquierda2.png') }}"></a>
 
     <h1>Bienvenido, {{ Auth::user()->name }}.</h1>
 

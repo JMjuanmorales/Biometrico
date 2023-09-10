@@ -5,7 +5,7 @@
 
 
 <div class="container">
-    <button class="regresar" onclick="return window.history.back();">Retroceder</button>
+    <a onclick="window.history.back()"><img class="atras" src="{{ url('images/flecha-izquierda2.png') }}"></a>
     <h1>Enviar excusa</h1>
 
     <div class="registration-form">

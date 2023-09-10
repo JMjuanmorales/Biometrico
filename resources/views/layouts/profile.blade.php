@@ -10,8 +10,16 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@100&family=Work+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    
     <!-- Estilos personalizados -->
     <style>
+
+        *{
+            font-family: 'Work Sans', sans-serif;
+        }
 
     /*-------------------------------------Header------------------------------------ */
         .header {
@@ -311,7 +319,11 @@
                 transition:all .25s;
                 }
 
-        
+            .icon-image-footer {
+                width: 100px;
+                height: 100px;
+                
+            }
         
     </style>
 </head>
@@ -338,7 +350,7 @@
   
         <a href="#">Esteban Morales</a>
 
-        <img class="icon-image" src="{{url('images/logo-sena2.svg')}}" alt="">
+        <img class="icon-image-footer" src="{{url('images/logo-sena2.svg')}}" alt="">
   
       </p>
   
