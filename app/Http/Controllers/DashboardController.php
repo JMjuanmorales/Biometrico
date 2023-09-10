@@ -15,20 +15,19 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
         $user = Auth::user();
-        $selectedDate = $request->input('date', '');
+        $today = date('Y-m-d');
+        $selectedDate = $request->input('date', $today);
 
-        // Consulta de asistencias
         $attendancesQuery = Attendance::where('user_id', $user->id);
 
-        // Filtrado por fecha, si es necesario
         if ($selectedDate) {
             $attendancesQuery->whereDate('date', $selectedDate);
         }
 
-        // Ordenación y paginación
         $attendanceStatuses = $attendancesQuery->orderBy('date', 'desc')->paginate(10);
+        $isToday = ($selectedDate === $today);
 
-        return view('dashboard', compact('attendanceStatuses', 'selectedDate'));
+        return view('dashboard', compact('attendanceStatuses', 'selectedDate', 'isToday'));
     }
 
 

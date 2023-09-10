@@ -7,12 +7,10 @@ use App\Models\User;
 use DateTime;
 use DateInterval;
 use DatePeriod;
-
 use Illuminate\Http\Request;
 
 class AttendanceController extends Controller
 {
-    
     public function checkIn(Request $request)
     {
         $userId = $request->input('user_id');
@@ -56,39 +54,6 @@ class AttendanceController extends Controller
 
             return response()->json(['success' => true]);
         }
-    }
-
-    private function createDateRange($startDate, $endDate)
-    {
-        $start = new DateTime($startDate);
-        $end = new DateTime($endDate);
-        $interval = new DateInterval('P1D');
-        $period = new DatePeriod($start, $interval, $end->modify('+1 day'));
-
-        $dates = [];
-        foreach ($period as $date) {
-            $dates[] = $date->format('Y-m-d');
-        }
-
-        return $dates;
-    }
-
-    public function teacherIndex($group_id, Request $request)
-    {
-        $selectedDate = $request->input('date', '');
-
-        
-        $students = User::whereHas('roles', function ($query) {
-            $query->where('name', 'aprendiz');
-        })->where('group_id', $group_id)
-        ->with(['attendances' => function ($query) use ($selectedDate) {
-            if (!empty($selectedDate)) {
-                $query->where('date', $selectedDate);
-            }
-        }])->get();
-
-        return view('teacher.dashboard', compact('students', 'selectedDate', 'group_id')); 
-    }
-
+    }  
 
 }

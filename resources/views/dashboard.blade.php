@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    
+
     <a onclick="window.history.back()"><img class="atras" src="{{ url('images/flecha-izquierda2.png') }}"></a>
 
     <h1>Bienvenido, {{ Auth::user()->name }}.</h1>
@@ -11,9 +11,18 @@
     <h2>Historial de asistencia</h2>
 
     <form method="GET" action="{{ route('dashboard') }}">
-        <input type="date" name="date" class= "regresar"  value="{{ request('date') }}">
+        <input type="date" name="date" class= "regresar"  value="{{ $selectedDate }}">
         <button type="submit" class="regresar">Filtrar</button>
     </form>
+
+    @if ($attendanceStatuses->isEmpty())
+        @if ($isToday)
+            <p>Hoy no has registrado asistencia.</p>
+        @else
+            <p>No registraste asistencia este día. <small>No olvides subir la excusa.</small></p>
+        @endif
+    @endif
+
     <table class="table">
         <thead class="cabeza">
             <tr>
@@ -25,7 +34,7 @@
                 <th>Estado</th>
             </tr>
         </thead>
-        
+
         <tbody>
             @foreach ($attendanceStatuses as $attendance)
                 <tr>
@@ -46,38 +55,35 @@
 
     {{ $attendanceStatuses->links() }}
 
-
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
- @if (session('success'))
-    Swal.fire(
-        '¡Perfecto!',
-        '{{ session('success') }}',
-        'success'
-    )
-@endif
-@if ($errors->any())
-    var errorText = '';
-    @foreach ($errors->all() as $error)
-        errorText += '{{ $error }}<br>';
-    @endforeach
+    <script>
+        @if (session('success'))
+            Swal.fire(
+                '¡Perfecto!',
+                '{{ session('success') }}',
+                'success'
+            )
+        @endif
+        @if ($errors->any())
+            var errorText = '';
+            @foreach ($errors->all() as $error)
+                errorText += '{{ $error }}<br>';
+            @endforeach
 
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        html: errorText,
-    });
-@endif
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                html: errorText,
+            });
+        @endif
 
-@if (session('error'))
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: '{{ session('error') }}',
-    });
-@endif
-</script>
-
-
+        @if (session('error'))
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '{{ session('error') }}',
+            });
+        @endif
+    </script>
 </div>
 @endsection
