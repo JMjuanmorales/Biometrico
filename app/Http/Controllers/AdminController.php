@@ -11,7 +11,6 @@ use App\Models\Program;
 use Illuminate\Support\Facades\Log;
 
 
-
 class AdminController extends Controller
 {
     public function __construct()
@@ -68,8 +67,6 @@ class AdminController extends Controller
 
         return redirect()->route('admin.create-user');
     }
-
-    
 
     
     public function listUsers()

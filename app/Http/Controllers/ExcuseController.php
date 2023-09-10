@@ -19,7 +19,7 @@ class ExcuseController extends Controller
         return view('create_excuse');
     }
 
-public function store(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
             'absence_date' => 'required|date',
@@ -58,7 +58,7 @@ public function store(Request $request)
     }
 
     public function download($filename)
-{
+    {
     try {
 
         $rutaArchivo = 'files/excuses/' . $filename;

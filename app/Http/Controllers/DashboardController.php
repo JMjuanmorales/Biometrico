@@ -30,23 +30,6 @@ class DashboardController extends Controller
         return view('dashboard', compact('attendanceStatuses', 'selectedDate', 'isToday'));
     }
 
-
-
-    private function createDateRange($startDate, $endDate)
-    {
-        $start = new DateTime($startDate);
-        $end = new DateTime($endDate);
-        $interval = new DateInterval('P1D');
-        $period = new DatePeriod($start, $interval, $end->modify('+1 day'));
-
-        $dates = [];
-        foreach ($period as $date) {
-            $dates[] = $date->format('Y-m-d');
-        }
-
-        return $dates;
-    }
-
     public function viewExcuses()
     {
         $user = auth()->user();

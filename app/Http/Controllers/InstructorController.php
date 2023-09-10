@@ -16,6 +16,7 @@ class InstructorController extends Controller
     {
         $this->middleware(['auth', 'role:instructor']);
     }
+    
     public function listGroups(Request $request)
     {
         $search = $request->input('search');

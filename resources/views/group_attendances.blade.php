@@ -16,13 +16,15 @@
     <div class="botonVerExcusa" >
         <a href="{{ route('instructor.scan',['group_id' => $group->id])}}" class="regresar">Escaner</a>
     </div>
-        <h2>Historial de asistencia de los estudiantes - Grupo {{ $students->first()->group->name }}</h2>
+        <h2>Historial de asistencia de los estudiantes - Ficha {{ $students->first()->group_id}}</h2>
 
         <form method="GET" action="{{ route('instructor.group', ['group_id' => $group->id]) }}">
             <label for="date">Fecha:</label>
             <input type="date" id="date" name="date" class="regresar" value="{{ $date }}">
             <button type="submit" class="regresar">Filtrar</button>
         </form>
+
+        
     
         <table class="table table-striped">
             <thead class="thead-dark">
@@ -37,24 +39,29 @@
             <tbody>
                 @foreach ($students as $student)
                     @php
-                        $firstAttendance = $student->attendances->first();
+                        $wasStudentRegistered = \Carbon\Carbon::parse($student->created_at)->toDateString() <= $date;
                     @endphp
-                    <tr>
-                        <td>{{ $student->name }}</td>
-                        <td>{{ $date }}</td>
-                        <td>{{ $firstAttendance && $firstAttendance->check_in_time ? \Carbon\Carbon::parse($firstAttendance->check_in_time)->format('H:i') : 'No registrado' }}</td>
-                        <td>{{ $firstAttendance && $firstAttendance->check_out_time ? \Carbon\Carbon::parse($firstAttendance->check_out_time)->format('H:i') : 'No registrado' }}</td>
-                        <td>{{ $firstAttendance ? $firstAttendance->status : 'Inasistente' }}</td>
-                    </tr>
-                    @foreach ($student->attendances->slice(1) as $additionalAttendance)
+                    @if ($student->attendances->isEmpty())
                         <tr>
                             <td>{{ $student->name }}</td>
                             <td>{{ $date }}</td>
-                            <td>{{ $additionalAttendance->check_in_time ? \Carbon\Carbon::parse($additionalAttendance->check_in_time)->format('H:i') : 'No registrado' }}</td>
-                            <td>{{ $additionalAttendance->check_out_time ? \Carbon\Carbon::parse($additionalAttendance->check_out_time)->format('H:i') : 'No registrado' }}</td>
-                            <td>{{ $additionalAttendance->status }}</td>
+                            @if($wasStudentRegistered)
+                                <td colspan="3">No ha registrado asistencia {{ $date == now()->toDateString() ? "hoy" : "este día" }}</td>
+                            @else
+                                <td colspan="3">No estaba registrado en el sistema en esta fecha</td>
+                            @endif
                         </tr>
-                    @endforeach
+                    @else
+                        @foreach ($student->attendances as $attendance)
+                            <tr>
+                                <td>{{ $student->name }}</td>
+                                <td>{{ $date }}</td>
+                                <td>{{ $attendance->check_in_time ? \Carbon\Carbon::parse($attendance->check_in_time)->format('H:i') : 'No registrado' }}</td>
+                                <td>{{ $attendance->check_out_time ? \Carbon\Carbon::parse($attendance->check_out_time)->format('H:i') : 'No registrado' }}</td>
+                                <td>{{ $attendance->status }}</td>
+                            </tr>
+                        @endforeach
+                    @endif
                 @endforeach
             </tbody>
         </table>
