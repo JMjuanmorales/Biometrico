@@ -12,11 +12,7 @@ use Illuminate\Http\Request;
 
 class AttendanceController extends Controller
 {
-    public function index()
-    {
-
-    }
-
+    
     public function checkIn(Request $request)
     {
         $userId = $request->input('user_id');
@@ -33,7 +29,7 @@ class AttendanceController extends Controller
         $newAttendance->user_id = $userId;
         $newAttendance->date = $today;
         $newAttendance->check_in_time = now();
-        $newAttendance->status = 'presente';
+        $newAttendance->status = 'No registró salida';
         $newAttendance->session_id = $newSessionId;
         $newAttendance->save();
 
@@ -55,6 +51,7 @@ class AttendanceController extends Controller
             return response()->json(['success' => false, 'error' => 'No check-in registrado para hoy']);
         } else {
             $attendance->check_out_time = now();
+            $attendance->status = 'Asistió';
             $attendance->save();
 
             return response()->json(['success' => true]);

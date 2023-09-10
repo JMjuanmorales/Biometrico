@@ -84,7 +84,7 @@ class UserController extends Controller
                     case 'admin':
                         return redirect()->route('admin.create-user')->with('success', 'Inicio de sesion exitoso');
                     default:
-                        return redirect()->back()->with('error', 'Inicio de sesion exitoso');
+                        return redirect()->back()->with('error', 'Inicio de sesion fallido');
                 }
             }
         }

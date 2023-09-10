@@ -63,7 +63,7 @@ class InstructorController extends Controller
         
         $excuse->save();
 
-        return redirect()->route('instructor.excuses',['group_id'=>$excuse->student->group_id]);
+        return redirect()->route('instructor.excuses',['group_id'=>$excuse->aprendiz->group_id]);
     }
 
     public function rejectExcuse($id)
@@ -72,7 +72,7 @@ class InstructorController extends Controller
         $excuse->status = 'Rechazada';
         $excuse->save();
 
-        return redirect()->route('instructor.excuses',['group_id'=>$excuse->student->group_id]);
+        return redirect()->route('instructor.excuses',['group_id'=>$excuse->aprendiz->group_id]);
     }
 
     public function showScanPage(){

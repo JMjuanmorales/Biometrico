@@ -22,7 +22,7 @@
         <tbody>
             @foreach ($excuses as $excuse)
                 <tr>
-                    <td>{{ $excuse->student->name }}</td>
+                    <td>{{ $excuse->aprendiz->name }}</td>
                     <td>{{ $excuse->absence_date }}</td>
                     <td>{{ $excuse->justification }}</td>
                     <td>
