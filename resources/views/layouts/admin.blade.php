@@ -59,8 +59,7 @@
         }
 
         h1{
-            font-family: 'Lato', sans-serif;
-            font-family: 'Oswald', sans-serif;
+            
             font-weight: 800;
             font-size: 3vw;
             line-height: 1;
@@ -223,7 +222,6 @@
         transition-delay: 50ms;
         }
         .nav ul li a{
-            font-family: 'Montserrat', sans-serif;
             font-size: 4vh;
             text-transform: uppercase;
             line-height: 2;
@@ -354,6 +352,8 @@
         background-repeat: no-repeat;
         
     }
+
+    
 
     .registration-form{
         padding: 50px 0;

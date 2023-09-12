@@ -224,7 +224,6 @@ transition-delay: 100ms;
 transition-delay: 50ms;
 }
 .nav ul li a{
-    font-family: 'Montserrat', sans-serif;
     font-size: 4vh;
     text-transform: uppercase;
     line-height: 2;
@@ -420,7 +419,7 @@ transition-delay: 1.5s;
         }
 
         .header {
-                background:linear-gradient(to left,  #36dda3, #4582b4); 
+                background:rgb(89, 181, 71); 
                 color: white;
                 padding: 20px;
                 font-size: 20px;
@@ -455,6 +454,7 @@ transition-delay: 1.5s;
         .p-5{
             background:rgb(89, 181, 71);
             padding: 3rem!important;
+            
              }
 
         a:link, a:visited, a:active {
@@ -896,7 +896,6 @@ transition-delay: 1.5s;
                 box-sizing: border-box;
                 width: 100%;
                 text-align: left;
-                font: normal 16px sans-serif;
                 padding: 45px 50px;
                 
                 bottom: 0;

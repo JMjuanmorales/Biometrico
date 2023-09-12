@@ -54,8 +54,7 @@
         }
 
         h1{
-            font-family: 'Lato', sans-serif;
-            font-family: 'Oswald', sans-serif;
+            
             font-weight: 800;
             font-size: 3vw;
             line-height: 1;
@@ -104,7 +103,7 @@
     /*-------------------------------------------------caja contenedor---------------------------------------------------- */
 
     body{
-        background-color:#ffffff;
+        background-color:#dddcdc;
         background-size: cover;
         background-repeat: no-repeat;
         
@@ -122,7 +121,7 @@
 
     .registration-form form{
         background-color: #fff;
-        max-width: 600px;
+        max-width: 450px;
         margin: auto;
         padding: 50px 70px;
         border-top-left-radius: 30px;
@@ -255,7 +254,6 @@
                 box-sizing: border-box;
                 width: 100%;
                 text-align: left;
-                font: normal 16px sans-serif;
                 padding: 45px 50px;
                 
                 bottom: 0;

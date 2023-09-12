@@ -35,7 +35,7 @@
                     </td>
                     <td>
                         
-                            <a href="{{ route('admin.edit-user', ['id' => $user->id]) }}" class="btn btn-sm btn-warning">Editar</a>
+                            <a href="{{ route('admin.edit-user', ['id' => $user->id]) }}" class="regresar">Editar</a>
                         
                     </td>
                 </tr>

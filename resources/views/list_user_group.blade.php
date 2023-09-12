@@ -23,7 +23,7 @@
                     <td>{{ $student->email }}</td>
                     <td>
                         
-                            <a href="{{ route('admin.edit-user', ['id' => $student->id]) }}" class="btn btn-sm btn-warning">Editar</a>
+                            <a href="{{ route('admin.edit-user', ['id' => $student->id]) }}" class="regresar">Editar</a>
                         
                     </td>
                 </tr>

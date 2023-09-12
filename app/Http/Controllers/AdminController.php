@@ -204,7 +204,7 @@ class AdminController extends Controller
 
         session()->flash('success', 'Programa creado correctamente');
 
-        return redirect()->route('admin.create-user')->with('success', 'Programa creado correctamente.');
+        return redirect()->route('admin.create-user');
     }
 
     public function showCreateGroupForm()
@@ -250,7 +250,7 @@ class AdminController extends Controller
 
         $students = User::where('group_id', $group_id)
             ->whereHas('roles', function($query) {
-                $query->where('name', 'student');
+                $query->where('name', 'aprendiz');
             })->get();
 
         return view('list_user_group', compact('group', 'students'));

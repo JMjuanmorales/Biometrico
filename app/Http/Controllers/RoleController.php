@@ -16,7 +16,7 @@ class RoleController extends Controller
     public function setSelectedRole(Request $request)
     {
         $request->validate([
-            'role' => 'required|in:student,instructor,admin',
+            'role' => 'required|in:aprendiz,instructor,admin',
         ]);
 
         session(['selected_role' => $request->role]);

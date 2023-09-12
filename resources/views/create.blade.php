@@ -18,17 +18,17 @@
         </div>
 
         <div class="form-group">
-            <label for="name">Nombres</label>
+            <label for="name">Nombres *</label>
             <input type="text" class="form-control item" id="name" name="name" value="{{ old('name') }}" required placeholder="Nombres">
         </div>
 
         <div class="form-group">
-            <label for="last_name">Apellidos</label>
+            <label for="last_name">Apellidos *</label>
             <input type="text" class="form-control item" id="last_name" name="last_name" value="{{ old('last_name') }}" required placeholder="Apellidos">
         </div>
 
         <div class="form-group">
-            <label for="document_type">Tipo de documento</label>
+            <label for="document_type">Tipo de documento *</label>
             <select name="document_type" id="document_type">
                 <option value="CC">CC</option>
                 <option value="TI">TI</option>
@@ -37,7 +37,7 @@
         </div>
 
         <div class="form-group">
-            <label for="document">Numero de documento</label>
+            <label for="document">Numero de documento *</label>
             <input type="text" class="form-control item" id="document" name="document" value="{{ old('document') }}" required placeholder="Numero de documento">
         </div>
 
@@ -57,17 +57,17 @@
         </div>
 
         <div class="form-group">
-            <label for="email">Correo electrónico</label>
+            <label for="email">Correo electrónico *</label>
             <input type="text" class="form-control item" id="email" name="email" value="{{ old('email') }}" required placeholder="Email">
         </div>
 
         <div class="form-group">
-            <label for="password">Contraseña</label>
+            <label for="password">Contraseña *</label>
             <input type="password" class="form-control item" id="password" name="password" required placeholder="Password">
         </div>
 
         <div class="form-group">
-            <label for="password_confirmation">Confirmar contraseña</label>
+            <label for="password_confirmation">Confirmar contraseña *</label>
             <input type="password" class="form-control item" id="password_confirmation" name="password_confirmation" required placeholder="Confirm Password">
         </div>
 

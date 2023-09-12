@@ -57,8 +57,6 @@
 }
 
 h1{
-    font-family: 'Lato', sans-serif;
-    font-family: 'Oswald', sans-serif;
     font-weight: 800;
     font-size: 3vw;
     line-height: 1;
@@ -222,7 +220,7 @@ transition-delay: 100ms;
 transition-delay: 50ms;
 }
 .nav ul li a{
-    font-family: 'Montserrat', sans-serif;
+   
     font-size: 4vh;
     text-transform: uppercase;
     line-height: 2;
@@ -262,27 +260,27 @@ width: 100%;
     transition: opacity 350ms ease,
                 transform 250ms ease;
 }
-.menu-icon:checked ~ .nav ul li:nth-child(1){
-transition-delay: 1s;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(2){
-transition-delay: 1.2s;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(3){
-transition-delay: 1.4s;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(4){
-transition-delay: 1.6s;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(5){
-transition-delay: 1.8s;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(6){
-transition-delay: 2s;
-}
-.menu-icon:checked ~ .nav ul li:nth-child(7){
-transition-delay: 2.2s;
-}
+    .menu-icon:checked ~ .nav ul li:nth-child(1){
+        transition-delay: 0.3s;
+    }
+    .menu-icon:checked ~ .nav ul li:nth-child(2){
+    transition-delay: 0.5s;
+    }
+    .menu-icon:checked ~ .nav ul li:nth-child(3){
+    transition-delay: 0.7s;
+    }
+    .menu-icon:checked ~ .nav ul li:nth-child(4){
+    transition-delay: 0.9s;
+    }
+    .menu-icon:checked ~ .nav ul li:nth-child(5){
+    transition-delay: 1.1s;
+    }
+    .menu-icon:checked ~ .nav ul li:nth-child(6){
+    transition-delay: 1.3s;
+    }
+    .menu-icon:checked ~ .nav ul li:nth-child(7){
+    transition-delay: 1.5s;
+    }
 
 
 
@@ -831,7 +829,7 @@ transition-delay: 2.2s;
         .btn,.btn-primary{
             margin-top: 33px;
             margin-bottom: 10px;
-            font-family: Arial, Helvetica, sans-serif;
+            
             margin-left: 44%;   
         }
 
@@ -840,7 +838,7 @@ transition-delay: 2.2s;
         h1{
             margin-top: 33px;
             margin-bottom: 33px;
-            font-family: Arial, Helvetica, sans-serif;
+            
             font-size: 41px;
             text-align: center;
             font-weight: 1000;           
@@ -851,7 +849,7 @@ transition-delay: 2.2s;
         h2{
             margin-top: 33px;
             margin-bottom: 10px;
-            font-family: Arial, Helvetica, sans-serif;
+            
             font-size: 41px;
             text-align: center;
             font-weight: 0;  
@@ -929,7 +927,7 @@ transition-delay: 2.2s;
             border-width: 2px;
             border-color: #fff;
             background-color: #fc7323;
-            font-family: Arial, Helvetica, sans-serif;
+            
             font-size: 15px;
             color: #fff;
             text-decoration: none;
@@ -943,7 +941,7 @@ transition-delay: 2.2s;
                 border-width: 2px;
                 border-color:#fff;
                 background-color: #fc7323;
-                font-family: Arial, Helvetica, sans-serif;
+                
                 font-size: 15px;
                 color: #fff;
                 text-decoration: none;
@@ -958,7 +956,6 @@ transition-delay: 2.2s;
                 box-sizing: border-box;
                 width: 100%;
                 text-align: left;
-                font: normal 16px sans-serif;
                 padding: 45px 50px;
                 
                 bottom: 0;

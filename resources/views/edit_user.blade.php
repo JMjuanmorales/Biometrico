@@ -30,7 +30,7 @@
             </div>
 
             <div class="form-group">
-                <label for="document_type">document_type</label>
+                <label for="document_type">Tipo de documento</label>
                 <select name="document_type" id="document_type" value="A">
                     <option value="CC">CC</option>
                     <option value="TI">TI</option>

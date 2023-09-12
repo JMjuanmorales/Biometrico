@@ -12,8 +12,8 @@
 
   <div class="registration-form">
     <form>
-      <button class="regresar" id="checkInBtn">Check-In</button>
-      <button class="regresar" id="checkOutBtn">Check-Out</button>
+      <button class="regresar" id="checkInBtn">Marcar entrada</button>
+      <button class="regresar" id="checkOutBtn">Marcar salida </button>
 
       <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

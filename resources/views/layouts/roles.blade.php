@@ -276,7 +276,6 @@
 
             .footer-distributed p.footer-links {
                 font-size: 18px;
-                font-weight: bold;
                 color: #ffffff;
                 margin: 0 0 10px;
                 padding: 0;
@@ -323,6 +322,12 @@
                 margin-left: 3px;
                 transition:all .25s;
                 }
+            
+            .icon-image-footer {
+                width: 100px;
+                height: 100px;
+                
+            }
 
             
 
@@ -358,7 +363,7 @@
   
         <a href="#">Esteban Morales</a>
 
-        <img class="icon-image" src="{{url('images/logo-sena2.svg')}}" alt="">
+        <img class="icon-image-footer" src="{{url('images/logo-sena2.svg')}}" alt="">
   
       </p>
   

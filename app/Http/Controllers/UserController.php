@@ -78,11 +78,14 @@ class UserController extends Controller
     
                 switch ($role) {
                     case 'aprendiz':
-                        return redirect()->route('dashboard')->with('success', 'Inicio de sesion exitoso');
+                        session()->flash('success', 'Inicio de sesion exitoso');
+                        return redirect()->route('dashboard');
                     case 'instructor':
-                        return redirect()->route('instructor.groups')->with('success', 'Inicio de sesion exitoso');
+                        session()->flash('success', 'Inicio de sesion exitoso');
+                        return redirect()->route('instructor.groups');
                     case 'admin':
-                        return redirect()->route('admin.create-user')->with('success', 'Inicio de sesion exitoso');
+                        session()->flash('success', 'Inicio de sesion exitoso');
+                        return redirect()->route('admin.create-user');
                     default:
                         return redirect()->back()->with('error', 'Inicio de sesion fallido');
                 }
@@ -103,28 +106,18 @@ class UserController extends Controller
     public function updateProfile(Request $request, $id)
     {   
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'last_name' => 'required|max:255',
-            'document_type' => 'required|max:255',
-            'document' => 'required|max:10',
             'born_date' => 'nullable|max:255',
             'phone_number'=> 'nullable|max:255',
             'emergency_number' => 'nullable|max:255', 
-            'email' => 'nullable|email|max:255|unique:users,email,' . $id,
             'roles' => 'array',
             'roles.*' => 'in:student,instructor,admin',
         ]);
 
         $user = User::findOrFail($id);
         $user->update([
-            'name' => $validatedData['name'],
-            'last_name' => $validatedData['last_name'],
-            'document_type' => $validatedData['document_type'],
-            'document' => $validatedData['document'],
             'born_date' => $validatedData['born_date'],
             'phone_number' => $validatedData['phone_number'],
             'emergency_number' => $validatedData['emergency_number'],
-            'email' => $validatedData['email'],
             
         ]);
 

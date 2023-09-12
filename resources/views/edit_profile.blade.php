@@ -4,7 +4,7 @@
 
 <div class="container">
     
-    <button class="regresar" onclick="return window.history.back();">Retroceder</button>
+    <a onclick="window.history.back()"><img class="atras" src="{{ url('images/flecha.png') }}"></a>
 
 
     <h1>Editar Perfil</h1>
@@ -14,35 +14,7 @@
         <form class="form-horizontal" method="POST" action="{{ route('profile.update', ['id' => $user->id]) }}">
             @csrf
 
-            <div class="form-group">
-                <label for="name">Nombres</label>
-                <input id="name" type="text" class="form-control item" name="name" value="{{ old('name', $user->name) }}" placeholder="Nombres">
-            </div>
 
-            <div class="form-group">
-                <label for="last_name">Apellidos</label>
-                <input id="last_name" type="text" class="form-control item" name="last_name" value="{{ old('name', $user->last_name) }}" placeholder="Apellidos">
-            </div>
-
-
-            <div class="form-group">
-                <label for="email">Correo electrónico</label>
-                <input id="email" type="text" class="form-control item" name="email" value="{{ old('email', $user->email) }}" placeholder="Correo electrónico">
-            </div>
-
-            <div class="form-group">
-                <label for="document_type">document_type</label>
-                <select name="document_type" id="document_type" value="CC">
-                    <option value="CC">CC</option>
-                    <option value="TI">TI</option>
-                    <option value="CE">CE</option>
-                  </select>
-            </div>
-    
-            <div class="form-group">
-                <label for="document">Numero de documento</label>
-                <input type="text" class="form-control item" id="document" name="document" value="{{ old('document', $user->document) }}" placeholder="Numero de documento">
-            </div>
     
             <div class="form-group">
                 <label for="born_date">Fecha de nacimiento</label>

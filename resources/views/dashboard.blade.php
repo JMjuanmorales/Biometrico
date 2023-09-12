@@ -6,7 +6,7 @@
 
     <a onclick="window.history.back()"><img class="atras" src="{{ url('images/flecha-izquierda2.png') }}"></a>
 
-    <h1>Bienvenido, {{ Auth::user()->name }}.</h1>
+    <h1>Bienvenid@, {{ Auth::user()->name }}.</h1>
 
     <h2>Historial de asistencia</h2>
 
