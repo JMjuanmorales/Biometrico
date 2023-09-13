@@ -214,10 +214,10 @@
         }
 
         .header {
-                background:linear-gradient(to left,  #36dda3, #4582b4); 
+                background-color:black: 
                 color: white;
                 padding: 20px;
-                font-size: 20px;
+                font-size: 14px;
                 height: 130px;
                 font-weight: bold;
                 line-height: 90px;
@@ -225,6 +225,10 @@
 
         .nav ul li a{
             font-size: 3vh;
+        }
+        h1{
+            padding: 20px;
+            font-size: 30px;
         }
     }
 

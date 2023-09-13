@@ -310,6 +310,10 @@ transition-delay: 1.5s;
     .nav ul li a{
         font-size: 2vh;
     }
+    h1{
+            padding: 20px;
+            font-size: 30px;
+        }
 }
 
 
@@ -422,7 +426,7 @@ transition-delay: 1.5s;
                 background:rgb(89, 181, 71); 
                 color: white;
                 padding: 20px;
-                font-size: 20px;
+                font-size: 14px;
                 height: 130px;
                 font-weight: bold;
                 line-height: 90px;
@@ -552,71 +556,12 @@ transition-delay: 1.5s;
         
 
         /*-----------------------boton ver excusa--------------------*/
-        .verExcusa {
-
-            background-color: #118153;
-            border: solid transparent;
-            border-radius: 16px;
-            border-width: 0 0 4px;
-            box-sizing: border-box;
-            color: #fff;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 15px;
-            font-weight: 700;
-            text-decoration: none;
-            letter-spacing: .8px;
-            line-height: 20px;
-            margin: 0;
-            outline: none;
-            overflow: visible;
-            padding: 13px 19px;
-            text-align: center;
-            text-transform: uppercase;
-            touch-action: manipulation;
-            transform: translateZ(0);
-            transition: filter .2s;
-            user-select: none;
-            -webkit-user-select: none;
-            vertical-align: middle;
-            white-space: nowrap;
-            }
-
-        .verExcusa:after {
-            background-clip: padding-box;
-            background-color: #03FD21;
-            border: solid transparent;
-            border-radius: 16px;
-            border-width: 0 0 4px;
-            bottom: -4px;
-            content: "";
-            left: 0;
-            position: relative;
-            right: 0;
-            top: 0;
-            z-index: -1;
-            }
-
-        .verExcusa:focus {
-            user-select: auto;
-            }
-
-        .verExcusa:hover:not(:disabled) {
-            filter: brightness(1.1);
-            }
-
-        .verExcusa:disabled {
-            cursor: auto;
-            }
-
-        .verExcusa:active:after {
-            border-width: 0 0 0px;
-            }
-
-        .verExcusa:active {
-            padding-bottom: 10px;
-            }
-        
+        video {
+                
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                }
         
         /*---------------boton buscar--------------------*/
         .input-group-append{

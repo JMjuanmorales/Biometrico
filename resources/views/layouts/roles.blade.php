@@ -133,6 +133,48 @@
             background-repeat: no-repeat;
             
         }
+
+    
+ /*-------------------------------------------------caja contenedor---------------------------------------------------- */
+
+     
+
+        @media (max-width: 576px) {
+        .registration-form form{
+            padding: 50px 20px;
+        }
+
+        .registration-form .form-icon{
+            width: 70px;
+            height: 70px;
+            font-size: 30px;
+            line-height: 70px;
+        }
+
+        .icon-image {
+            width: 90px;
+            height: 90px;
+        }
+
+        .header {
+                background-color: black; 
+                color: white;
+                padding: 20px;
+                font-size: 14px;
+                height: 130px;
+                font-weight: bold;
+                line-height: 90px;
+            }
+
+        .nav ul li a{
+            font-size: 3vh;
+        }
+
+        h1{
+            padding: 20px;
+            font-size: 30px;
+        }
+    }
    
     
         
@@ -328,6 +370,8 @@
                 height: 100px;
                 
             }
+
+            
 
             
 

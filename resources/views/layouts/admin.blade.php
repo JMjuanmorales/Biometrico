@@ -458,7 +458,7 @@
                 background-color:#238276; 
                 color: white;
                 padding: 20px;
-                font-size: 20px;
+                font-size: 14px;
                 height: 130px;
                 font-weight: bold;
                 line-height: 90px;
@@ -466,6 +466,11 @@
 
         .nav ul li a{
             font-size: 3vh;
+        }
+
+        h1{
+            padding: 20px;
+            font-size: 30px;
         }
     }
 
@@ -495,31 +500,41 @@
     }
 
     /* -------------------Tablas---------------- */
-    table, td, th { 
-            text-align: center;
-            background-color: #e7ecf1;
+        table, td, th { 
+                text-align: center;
+                background-color: #e7ecf1;
 
-        }
-
-        
-
-    th {
-            border-top: 1px solid;
-            background: #238276;
-        }
-
-        
-
-    thead{
-            border-right: 1px solid;
-            border-left: 1px solid;
-            border-collapse: collapse;
-            background: #238276; 
-        }
-
-    thead th {
-            color: #fff;
             }
+
+            
+
+        th {
+                border-top: 1px solid;
+                background: #238276;
+            }
+
+            
+
+        thead{
+                border-right: 1px solid;
+                border-left: 1px solid;
+                border-collapse: collapse;
+                background: #238276; 
+            }
+
+        thead th {
+                color: #fff;
+                }
+
+        @media screen and (max-width: 480px) {
+            
+            table{
+                display: block;
+                overflow-x: auto;
+            
+            }
+            
+        }
         
             /* --------------fiachas ------------ */
 

@@ -479,10 +479,10 @@ width: 100%;
         }
 
         .header {
-                background:linear-gradient(to left,  #36dda3, #4582b4); 
+                background-color:#fc7323;
                 color: white;
                 padding: 20px;
-                font-size: 20px;
+                font-size: 14px;
                 height: 130px;
                 font-weight: bold;
                 line-height: 90px;
@@ -490,6 +490,11 @@ width: 100%;
 
         .nav ul li a{
             font-size: 3vh;
+        }
+
+        h1{
+            padding: 20px;
+            font-size: 30px;
         }
     }
 
@@ -913,6 +918,10 @@ width: 100%;
                 overflow-x: auto;
             
             }
+            h1{
+            padding: 20px;
+            font-size: 30px;
+        }
             
         }
         
@@ -946,6 +955,13 @@ width: 100%;
                 color: #fff;
                 text-decoration: none;
         }
+
+        .custom-input-file {
+            
+            width: 143px;
+            }
+
+        
 
         /*footer*/
 

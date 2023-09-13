@@ -24,7 +24,7 @@
 
             <div class="form-group">
                 <label for="document">Adjuntar documento:</label>
-                <input type="file" name="document" id="document" class="form-control-file item">
+                <input type="file" name="document" id="document" class="custom-input-file">
             </div>
 
             <div class="form-group">
