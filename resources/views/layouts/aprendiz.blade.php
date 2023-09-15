@@ -176,7 +176,7 @@ transition: width 100ms ease,
 }
 
 .menu-icon:checked ~ .nav {
-    width: 40%;
+    width: 30%;
     transition: width 3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -390,6 +390,8 @@ width: 100%;
         padding: 50px 70px;
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
     }
 
@@ -577,222 +579,15 @@ width: 100%;
 
         }
   
-        /*-----------------------logaut--------------------*/
-
-        .logout {
-            
-            background-color: #fc7323;
-            border: solid transparent;
-            border-radius: 16px;
-            border-width: 0 0 4px;
-            box-sizing: border-box;
-            color: black;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 15px;
-            font-weight: 700;
-            text-decoration: none;
-            letter-spacing: .8px;
-            line-height: 20px;
-            margin: 0;
-            outline: none;
-            overflow: visible;
-            padding: 13px 19px;
-            text-align: center;
-            text-transform: uppercase;
-            touch-action: manipulation;
-            transform: translateZ(0);
-            transition: filter .2s;
-            user-select: none;
-            -webkit-user-select: none;
-            vertical-align: middle;
-            white-space: nowrap;
-            }
-
-        .logout:after {
-            background-clip: padding-box;
-            background-color: #fc7323;
-            border: solid transparent;
-            border-radius: 16px;
-            border-width: 0 0 4px;
-            bottom: -4px;
-            content: "";
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-            z-index: -1;
-            }
-
-        .logout:focus {
-            user-select: auto;
-            }
-
-        .logout:hover:not(:disabled) {
-            filter: brightness(1.1);
-            }
-
-        .logout:disabled {
-            cursor: auto;
-            }
-
-        .logout:active:after {
-            border-width: 0 0 0px;
-            }
-
-        .logout:active {
-            padding-bottom: 10px;
-            }
         
-
-        /*-----------------------boton ver excusa--------------------*/
-
-        .botonVerExcusa{
-            text-align: center;
-        }
-        
-
-        /*-----------------------boton ver excusa--------------------*/
-        .verExcusa {
-
-            background-color: #118153;
-            border: solid transparent;
-            border-radius: 16px;
-            border-width: 0 0 4px;
-            box-sizing: border-box;
-            color: #fff;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 15px;
-            font-weight: 700;
-            text-decoration: none;
-            letter-spacing: .8px;
-            line-height: 20px;
-            margin: 0;
-            outline: none;
-            overflow: visible;
-            padding: 13px 19px;
-            text-align: center;
-            text-transform: uppercase;
-            touch-action: manipulation;
-            transform: translateZ(0);
-            transition: filter .2s;
-            user-select: none;
-            -webkit-user-select: none;
-            vertical-align: middle;
-            white-space: nowrap;
-            }
-
-        .verExcusa:after {
-            background-clip: padding-box;
-            background-color: #03FD21;
-            border: solid transparent;
-            border-radius: 16px;
-            border-width: 0 0 4px;
-            bottom: -4px;
-            content: "";
-            left: 0;
-            position: relative;
-            right: 0;
-            top: 0;
-            z-index: -1;
-            }
-
-        .verExcusa:focus {
-            user-select: auto;
-            }
-
-        .verExcusa:hover:not(:disabled) {
-            filter: brightness(1.1);
-            }
-
-        .verExcusa:disabled {
-            cursor: auto;
-            }
-
-        .verExcusa:active:after {
-            border-width: 0 0 0px;
-            }
-
-        .verExcusa:active {
-            padding-bottom: 10px;
-            }
+       
         
         
         /*---------------boton buscar--------------------*/
         .input-group-append{
             text-align: center;
         }
-        /*---------------boton buscar--------------------*/
-
-        .form-control {
-            margin-bottom:25px;
-        }
-
-
-        .buscar {
-            background-color: #fc7323;
-            border: solid transparent;
-            border-radius: 10px;
-            border-width: 0 0 2px;
-            box-sizing: border-box;
-            color: #fff;
-            cursor: pointer;
-            display: inline-block;
-            font-size: 15px;
-            font-weight: 700;
-            text-decoration: none;
-            letter-spacing: 1px;
-            line-height: 20px;
-            margin: 0;
-            outline: none;
-            overflow: visible;
-            padding: 13px 19px;
-            text-align: center;
-            text-transform: uppercase;
-            touch-action: manipulation;
-            transform: translateZ(0);
-            transition: filter .2s;
-            user-select: none;
-            -webkit-user-select: none;
-            vertical-align: middle;
-            white-space: nowrap;
-            }
-
-        .buscar:after {
-            background-clip: padding-box;
-            background-color: #fc7323;
-            border: solid transparent;
-            border-radius: 16px;
-            border-width: 0 0 4px;
-            bottom: -4px;
-            content: "";
-            left: 0;
-            position: relative;
-            right: 0;
-            top: 0;
-            z-index: -1;
-            }
-
-        .buscar:focus {
-            user-select: auto;
-            }
-
-        .buscar:hover:not(:disabled) {
-            filter: brightness(1.1);
-            }
-
-        .buscar:disabled {
-            cursor: auto;
-            }
-
-        .buscar:active:after {
-            border-width: 0 0 0px;
-            }
-
-        .buscar:active {
-            padding-bottom: 10px;
-            }
+        
 
         /*---------------busqueda--------------------*/
 
@@ -807,36 +602,7 @@ width: 100%;
         }
 
 
-        /* ----------------------- botones-----------------*/
-
         
-
-
-
-        .boton{
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 13px;
-            color:black;
-            text-decoration: none;
-            margin-right: 5px;
-            font-family: Arial, Helvetica, sans-serif;
-            padding: 7px 20px;
-                }
-        .boton{
-            border-radius: 20px;
-            border-style: solid;
-            border-width: 2px;
-            border-color: black;
-            background-color: white;
-            margin-left: 84%;
-        }
-
-        .btn,.btn-primary{
-            margin-top: 33px;
-            margin-bottom: 10px;
-            
-            margin-left: 44%;   
-        }
 
         /*-------------------Titulos----------------- */
 
@@ -925,37 +691,6 @@ width: 100%;
             
         }
         
-
-
-
-        /*-------------Botones tablas ------------------- */
-
-        .botones1{
-            border-radius: 7px;
-            border-style: solid;
-            border-width: 2px;
-            border-color: #fff;
-            background-color: #fc7323;
-            
-            font-size: 15px;
-            color: #fff;
-            text-decoration: none;
-
-
-        }
-
-        .botones2{
-                border-radius: 7px;
-                border-style: solid;
-                border-width: 2px;
-                border-color:#fff;
-                background-color: #fc7323;
-                
-                font-size: 15px;
-                color: #fff;
-                text-decoration: none;
-        }
-
         .custom-input-file {
             
             width: 143px;

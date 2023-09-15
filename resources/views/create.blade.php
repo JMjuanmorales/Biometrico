@@ -36,6 +36,8 @@
               </select>
         </div>
 
+        <br>
+
         <div class="form-group">
             <label for="document">Numero de documento *</label>
             <input type="text" class="form-control item" id="document" name="document" value="{{ old('document') }}" required placeholder="Numero de documento">

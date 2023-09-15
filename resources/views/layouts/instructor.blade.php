@@ -180,7 +180,7 @@ transition: width 100ms ease,
 }
 
 .menu-icon:checked ~ .nav {
-    width: 40%;
+    width: 30%;
     transition: width 1s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -335,6 +335,8 @@ transition-delay: 1.5s;
         padding: 50px 70px;
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
     }
 
@@ -648,38 +650,6 @@ transition-delay: 1.5s;
         /* ----------------------- Pasar de pagina-----------------*/
         .pasarDePagina{
             text-align: center;
-        }
-
-
-        /* ----------------------- botones-----------------*/
-
-        
-
-
-
-        .boton{
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 13px;
-            color:black;
-            text-decoration: none;
-            margin-right: 5px;
-            font-family: Arial, Helvetica, sans-serif;
-            padding: 7px 20px;
-                }
-        .boton{
-            border-radius: 20px;
-            border-style: solid;
-            border-width: 2px;
-            border-color: black;
-            background-color: white;
-            margin-left: 84%;
-        }
-
-        .btn,.btn-primary{
-            margin-top: 33px;
-            margin-bottom: 10px;
-            font-family: Arial, Helvetica, sans-serif;
-            margin-left: 44%;   
         }
 
         /*-------------------Titulos----------------- */

@@ -121,6 +121,13 @@ class AdminController extends Controller
     }
 
     public function manyUsers(Request $request) {
+        $request->validate([
+            'user_file' => 'required|file|mimetypes:text/plain,text/csv'
+        ], [
+            'user_file.mimetypes' => 'El archivo debe ser de tipo txt o csv.',
+            'user_file.required' => 'Es necesario seleccionar un archivo.',
+        ]);
+        
         
         if ($request->hasFile('user_file')) {
             $userFile = $request->file('user_file');
@@ -134,7 +141,7 @@ class AdminController extends Controller
             $roleName = $request->input("roles"); // Reemplaza 'nombre_del_rol' con el nombre real del rol
     
             foreach ($usersData as $userLine) {
-                $userDataArray = explode(',', $userLine);
+                $userDataArray = explode(';', $userLine);
     
                 if (count($userDataArray) >= 5) {
                     $existingUser = User::where('document', $userDataArray[3])
@@ -174,6 +181,8 @@ class AdminController extends Controller
             return redirect()->route('admin.users');
         }
     }
+
+
 
     public function createUsers()
     {

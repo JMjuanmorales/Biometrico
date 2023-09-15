@@ -28,7 +28,7 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-block create-account">Enviar excusa</button>
+                <button type="submit" class="regresar">Enviar excusa</button>
             </div>
         </form>
     </div>
