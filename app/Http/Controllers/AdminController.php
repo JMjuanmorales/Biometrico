@@ -42,8 +42,11 @@ class AdminController extends Controller
             'roles.*' => 'in:aprendiz,instructor,admin',
             'group_id' => 'nullable|exists:groups,id',
         ], [
+            'document' => 'El documento no puede ser de mas de 10 numeros',
             'email.unique' => 'El correo ya está registrado',
-            'password.confirmed' => 'Las contraseñas no coinciden'
+            'password.confirmed' => 'Las contraseñas no coinciden',
+            'password' => 'Las contraseñas debe de ser de mas de 8 caracteres',
+            'roles' => 'Debe selecionar un rol'
         ]);
 
         $user = User::create([

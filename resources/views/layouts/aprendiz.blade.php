@@ -791,7 +791,7 @@ width: 100%;
         <nav class="nav"> 		
             <ul class="pt-5">
                 <li><a href="{{ route('excuse.create') }}"  id="excusa1">Subir Excusa</a></li>
-                <li><a href="{{ route('excuses') }}"  id="excusa2">Ver estado de mis excusas</a></li>
+                <li><a href="{{ route('excuses') }}"  id="excusa2">Mis excusas</a></li>
                 <li><a href="{{ route('profile.show') }}">Ver perfil</a></li>
                 <li><a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}

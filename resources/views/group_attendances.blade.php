@@ -6,7 +6,7 @@
     <a onclick="window.history.back()"><img class="atras" src="{{ url('images/flecha-izquierda3.png') }}"></a>
 
 
-    <h1>Panel de control del profesor</h1> 
+    <h1>Panel de control del instructor</h1> 
 
     
     @if($students->isNotEmpty())
@@ -14,7 +14,7 @@
         <a href="{{ route('instructor.excuses',['group_id' => $group->id])}}" class="regresar">Ver Excusas</a>
     </div>
     <div class="botonVerExcusa" >
-        <a href="{{ route('instructor.scan',['group_id' => $group->id])}}" class="regresar">Escaner</a>
+        <a href="{{ route('instructor.scan',['group_id' => $group->id])}}" class="regresar">Escáner</a>
     </div>
         <h2>Historial de asistencia de los estudiantes - Ficha {{ $students->first()->group_id}}</h2>
 
