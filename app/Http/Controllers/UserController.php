@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
-    public function showRegistrationForm()
+    //Descartados por como funciona el registro de usuarios
+
+    /* public function showRegistrationForm()
     {
         return view('register');
     }
@@ -36,8 +38,22 @@ class UserController extends Controller
         Auth::login($user);
 
         return redirect()->route('dashboard');
-    }
+    } */
 
+    /*----------------------------------------------(:3)--------------------------------------------------------*/
+
+    /**
+     * Muestra el perfil del usuario autenticado.
+     *
+     * Este método recupera la información del usuario autenticado y su grupo, y muestra la vista del perfil.
+     *
+     * Variables importantes:
+     * - $user: Usuario autenticado.
+     * - $group: Grupo al que pertenece el usuario.
+     *
+     * Métodos importantes:
+     * - view($viewName, $data): Devuelve la vista del perfil del usuario.
+     */
     public function showProfile() {
         $user = Auth::user();
         $group = $user->group;
@@ -45,6 +61,19 @@ class UserController extends Controller
         return view('profile', compact('user', 'group'));
     }
 
+    /**
+     * Muestra el formulario para editar el perfil del usuario.
+     *
+     * Este método recupera la información del usuario autenticado y su grupo para mostrar el formulario de edición del perfil.
+     *
+     * Variables importantes:
+     * - $user: Usuario autenticado.
+     * - $group: Grupo al que pertenece el usuario.
+     * - $roles: Roles del usuario.
+     *
+     * Métodos importantes:
+     * - view($viewName, $data): Devuelve la vista para editar el perfil del usuario.
+     */
     public function editProfile(){
         $user = Auth::user();
         $group = $user->group;
@@ -52,11 +81,34 @@ class UserController extends Controller
         return view('edit_profile', compact('user'));
     }
 
+    /**
+     * Muestra el formulario de inicio de sesión.
+     *
+     * Este método devuelve la vista que contiene el formulario para que los usuarios inicien sesión.
+     *
+     * Métodos importantes:
+     * - view($viewName): Devuelve la vista del formulario de inicio de sesión.
+     */
     public function showLoginForm()
     {
         return view('login');
     }
 
+    /**
+     * Autentica a un usuario en la aplicación.
+     *
+     * Este método valida las credenciales proporcionadas por el usuario. Si son válidas, inicia la sesión y redirige según el rol del usuario.
+     *
+     * Variables importantes:
+     * - $credentials: Credenciales ingresadas por el usuario.
+     * - $roles: Roles asociados con el usuario autenticado.
+     *
+     * Métodos importantes:
+     * - validate($rules): Valida los datos de entrada.
+     * - attempt($credentials): Intenta autenticar al usuario.
+     * - session()->regenerate(): Regenera la sesión.
+     * - session()->flash($key, $value): Almacena datos en la sesión para solo un viaje de solicitud posterior.
+     */
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -97,12 +149,36 @@ class UserController extends Controller
         ]);
     }
 
+    /**
+     * Cierra la sesión del usuario.
+     *
+     * Este método cierra la sesión del usuario y redirige al formulario de inicio de sesión.
+     *
+     * Métodos importantes:
+     * - logout(): Cierra la sesión del usuario.
+     * - redirect()->route($routeName): Redirige al usuario al formulario de inicio de sesión.
+     */
     public function logout()
     {
         Auth::logout();
         return redirect()->route('login.form');
     }
 
+    /**
+     * Actualiza el perfil del usuario.
+     *
+     * Este método actualiza la información del perfil del usuario en la base de datos según los datos validados proporcionados.
+     *
+     * Variables importantes:
+     * - $validatedData: Datos validados ingresados por el usuario.
+     * - $id: ID del usuario que se va a actualizar.
+     *
+     * Métodos importantes:
+     * - validate($rules): Valida los datos de entrada.
+     * - findOrFail($id): Encuentra un modelo por su clave principal o lanza una excepción si no se encuentra.
+     * - update($attributes): Actualiza el modelo en la base de datos.
+     * - session()->flash($key, $value): Almacena datos en la sesión para solo un viaje de solicitud posterior.
+     */
     public function updateProfile(Request $request, $id)
     {   
         $validatedData = $request->validate([
@@ -125,5 +201,4 @@ class UserController extends Controller
 
         return redirect()->route('profile.show');
     }
-
 }
