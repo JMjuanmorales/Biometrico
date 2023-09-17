@@ -24,8 +24,15 @@
         *{
             font-family: 'Work Sans', sans-serif;
         }
+        label{
+        font-weight: bold;
+    }
         body {
             background-color: #f0f2f5;
+        }
+        .atras {
+            width: 50px;
+            height: 50px;
         }
 
         /*-------------------------------------Header------------------------------------ */

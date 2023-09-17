@@ -21,6 +21,15 @@
             font-family: 'Work Sans', sans-serif;
         }
 
+        label{
+            font-weight: bold;
+        }
+
+        .content {
+            min-height: 700px;
+            padding: 20px;
+        }
+
     /*-------------------------------------Header------------------------------------ */
         .header {
                 background-color:black; 

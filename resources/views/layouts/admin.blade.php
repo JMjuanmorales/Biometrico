@@ -20,6 +20,7 @@
         *{
             font-family: 'Work Sans', sans-serif;
         }
+        
     /*-------------------------------------Header------------------------------------ */
         .header {
                 background-color:#238276; 
@@ -49,6 +50,11 @@
 
         /*------------------------------------------menu----------------------------------------------------------- */
         
+        .p-5 {
+            background: #238276;
+            padding: 20px;
+
+        }
         .form-icon {
             display: flex;
             justify-content: center;
@@ -573,11 +579,10 @@
             
         }
         
-            /* --------------fiachas ------------ */
+        /* --------------fiachas ------------ */
 
         .p-5{
-            padding: 20px;
-            
+            background-color:#238276;
             padding: 3rem!important;
              }
 
@@ -592,7 +597,7 @@
             margin-top: 50px;
         }
         .card {
-            background-color:#238276 ;
+            background-color:#238276;
             margin: 10px;
             border-radius: 10px;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
@@ -632,11 +637,9 @@
             align-items: flex-start;
             padding: 20px;
             color:black;
-
-        
-
         }
 
+        
     /*---------------------------------------------------- */
        
     /*---------------------------------------------------- */

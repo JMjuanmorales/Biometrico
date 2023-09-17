@@ -5,7 +5,8 @@
 <div class="container">
     
     <a onclick="window.history.back()"><img class="atras" src="{{ url('images/flecha-izquierda.png') }}"></a>
-    
+    <br>
+    <br>
     <div class="p-5">
 
         <div class="container shadow-lg p-3 mb-5 bg-body rounded">
