@@ -158,7 +158,7 @@ class AdminController extends Controller
             'emergency_number' => 'nullable|max:255', 
             'email' => 'nullable|email|max:255|unique:users,email,' . $id,
             'roles' => 'array',
-            'roles.*' => 'in:student,instructor,admin',
+            'roles.*' => 'in:aprendiz,instructor,admin',
             'group_id' => 'nullable|exists:groups,id',
         ]);
 
