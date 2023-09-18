@@ -73,6 +73,10 @@
             padding-bottom: 45px;
             
         }
+        .atras {
+            width: 50px;
+            height: 50px;
+        }
 
 
         /*-----------------------boton Regresar-------------------*/
