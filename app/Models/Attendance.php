@@ -7,6 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Attendance extends Model
 {
+    /**
+     * Modelo de Asistencia.
+     *
+     * Este modelo representa la asistencia de los usuarios en diferentes sesiones.
+     *
+     * Variables importantes:
+     * - $fillable: Atributos que se pueden asignar de manera masiva.
+     *
+     * Relaciones:
+     * - user(): Relación que indica a qué usuario pertenece la asistencia.
+     *
+     * Métodos importantes:
+     * - scopeOnlyAbsences($query): Scope que filtra los registros de asistencia donde el estado es 'ausente'.
+     *
+     */
     use HasFactory;
 
     protected $fillable = [

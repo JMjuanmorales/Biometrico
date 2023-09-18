@@ -15,22 +15,23 @@ use App\Http\Controllers\ResetPasswordController;
 
 //Rutas generales para el usuario
 Route::get('/', function () {return redirect()->route('login.form');});
-Route::get('/profile', [UserController::class, 'showProfile'])->name('profile.show');
-Route::get('/profile/edit', [UserController::class, 'editProfile'])->name('profile.edit');
-Route::post('/profile/update/{id}', [UserController::class, 'updateProfile'])->name('profile.update');
-
 Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('register.form');
 Route::post('/register', [UserController::class, 'register'])->name('register');
-
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-
-
 Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('/profile', [UserController::class, 'showProfile'])->name('profile.show');
+    Route::get('/profile/edit', [UserController::class, 'editProfile'])->name('profile.edit');
+    Route::post('/profile/update/{id}', [UserController::class, 'updateProfile'])->name('profile.update');
+    Route::get('/select-role', [RoleController::class, 'selectRole'])->name('select-role');
+    Route::post('/set-selected-role', [RoleController::class, 'setSelectedRole'])->name('set-selected-role');
+});
 
 
 
@@ -61,9 +62,6 @@ Route::middleware(['auth', 'role:instructor'])->group(function () {
     Route::get('/instructor/scan', [InstructorController::class, 'showScanPage'])->name('instructor.scan');
     Route::post('/attendance/check-in', [AttendanceController::class, 'checkIn'])->name('attendance.check-in');
     Route::post('/attendance/check-out', [AttendanceController::class, 'checkOut'])->name('attendance.check-out');
-
-
-
 });
 
 
@@ -83,9 +81,4 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->group(function () {
     Route::post('/admin/create-group', [AdminController::class, 'createGroup'])->name('create-group');
     Route::get('/admin/list-groups', [AdminController::class, 'listGroups'])->name('list-groups');
     Route::get('/admin/list-groups/{group_id}', [AdminController::class, 'listUsersFichas'])->name('group-admin');
-
 });
-
-
-Route::get('/select-role', [RoleController::class, 'selectRole'])->name('select-role')->middleware('auth');
-Route::post('/set-selected-role', [RoleController::class, 'setSelectedRole'])->name('set-selected-role')->middleware('auth');

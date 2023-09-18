@@ -113,29 +113,21 @@ class ExcuseController extends Controller
 
             $rutaArchivo = 'files/excuses/' . $filename;
 
-            // Carga las credenciales desde el archivo JSON directamente
             $pathToServiceAccount = base_path('storage_credentials.json'); 
 
-            // Crea una instancia de Firebase
             $factory = (new Factory)
                         ->withServiceAccount($pathToServiceAccount)
                         ->withDatabaseUri('https://biometric-service-35fc8.firebaseio.com');
 
-            // Obtiene una instancia de Firebase Storage
             $storage = $factory->createStorage();
 
-            // Obtiene una referencia al bucket
             $bucket = $storage->getBucket();
 
-            // Obtiene una referencia al archivo en Firebase Storage
             $archivoRef = $bucket->object($rutaArchivo);
 
-            // Verifica si el objeto existe
             if ($archivoRef->exists()) {
-                // Genera una URL de descarga firmada para el archivo (válida por 15 minutos)
                 $url = $archivoRef->signedUrl(now()->addMinutes(15));
 
-                // Redirige al usuario a la URL de descarga
                 return redirect($url);
             } else {
                 return response()->json(['error' => 'Archivo no encontrado'], 404);

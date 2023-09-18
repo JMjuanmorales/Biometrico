@@ -8,6 +8,19 @@ use App\Models\User;
 
 class Excuse extends Model
 {
+    /**
+     * Modelo de Excusa.
+     *
+     * Este modelo representa las excusas que los usuarios pueden enviar para justificar una ausencia.
+     *
+     * Variables importantes:
+     * - $fillable: Atributos que se pueden asignar de manera masiva.
+     *
+     * Relaciones:
+     * - user(): Relación que indica a qué usuario pertenece la excusa.
+     * - aprendiz(): Relación alternativa para especificar a qué aprendiz pertenece la excusa.
+     *
+     */
     use HasFactory;
 
     protected $fillable = [

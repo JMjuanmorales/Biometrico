@@ -8,6 +8,18 @@ use App\Models\Group;
 
 class Program extends Model
 {
+    /**
+     * Modelo de Programa.
+     *
+     * Este modelo representa los programas de formación que contienen varios grupos.
+     *
+     * Variables importantes:
+     * - $fillable: Atributos que se pueden asignar de manera masiva.
+     *
+     * Relaciones:
+     * - groups(): Relación que indica los grupos que pertenecen a este programa.
+     *
+     */
     use HasFactory;
 
     protected $fillable = [
