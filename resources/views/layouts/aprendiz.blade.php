@@ -697,13 +697,14 @@ width: 100%;
             padding: 20px;
             font-size: 30px;
         }
-            
-        }
-        
         .custom-input-file {
             
             width: 156px;
             }
+            
+        }
+        
+        
 
         
 
