@@ -186,7 +186,7 @@ transition: width 100ms ease,
 
 .menu-icon:checked ~ .nav {
     width: 30%;
-    transition: width 3s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: width 1s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .nav ul{
@@ -702,7 +702,7 @@ width: 100%;
         
         .custom-input-file {
             
-            width: 143px;
+            width: 156px;
             }
 
         

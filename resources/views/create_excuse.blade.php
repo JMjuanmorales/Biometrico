@@ -27,6 +27,9 @@
                 <input type="file" name="document" id="document" class="custom-input-file">
             </div>
 
+            <br>
+            <br>
+
             <div class="form-group">
                 <button type="submit" class="regresar">Enviar excusa</button>
             </div>
